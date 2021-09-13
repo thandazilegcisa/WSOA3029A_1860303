@@ -1,0 +1,102 @@
+#navigationMenu {
+  z-index: 1;
+  position: absolute;
+  width: 980px;
+  height: 62px;
+  left: 803px;
+  top: 0px;
+}
+.navigationFeatures {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  list-style-type: none;
+
+  margin: 5px;
+
+  color: #9c755a;
+}
+.list-Item {
+  padding: 45px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+}
+.section-One {
+  position: absolute;
+
+  width: 803px;
+  height: 980px;
+  left: 0px;
+  top: 0px;
+
+  background: #235559;
+}
+.section-Two {
+  position: absolute;
+
+  width: 980px;
+  height: 980px;
+  left: 803px;
+  top: 0px;
+
+  background-color: #f3cf89;
+}
+.sectionOne-Paragraph,
+.sectionTwo-Paragraph {
+  position: relative;
+  width: 450px;
+  height: 555px;
+  bottom: -50px;
+  left: 430px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 144px;
+  line-height: 169px;
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  color: #f3cf89;
+}
+.sectionTwo-Paragraph {
+  left: 45px;
+  bottom: -220px;
+  color: #232c35;
+}
+.sectionThree-Paragraph {
+  position: relative;
+  width: 450px;
+  height: 25px;
+  bottom: -500px;
+  left: 520px;
+
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 25px;
+  color: #e28849;
+}
+.deco-Line-One {
+  position: relative;
+  width: 34px;
+  height: 620px;
+  left: 59px;
+  top: 155px;
+  background-color: #f3cf89;
+}
+.deco-Line-Two {
+  position: relative;
+  width: 550px;
+  left: 1006px;
+  top: 150px;
+  border: 14px solid #232c35;
+}
+.footer {
+  z-index: 2;
+  background-color: #ffffff;
+}
