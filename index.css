@@ -3,8 +3,14 @@
   position: absolute;
   width: 980px;
   height: 62px;
-  left: 803px;
+  left: 700px;
   top: 0px;
+}
+#logo {
+  position: relative;
+  z-index: 1;
+
+  transform: translateY(12px);
 }
 .navigationFeatures {
   display: flex;
@@ -12,10 +18,11 @@
   justify-content: center;
 
   list-style-type: none;
+  outline-style: none;
 
   margin: 5px;
 
-  color: #9c755a;
+  color: #e28849;
 }
 .list-Item {
   padding: 45px;
@@ -23,11 +30,23 @@
   font-style: normal;
   font-weight: normal;
 }
+.list-Item a {
+  text-decoration: none;
+
+  color: #9c755a;
+  padding: 45%;
+}
+.cricleOne {
+  opacity: 0.8;
+}
+.circle {
+  opacity: 0.4;
+}
 .section-One {
   position: absolute;
 
   width: 803px;
-  height: 980px;
+  height: 920px;
   left: 0px;
   top: 0px;
 
@@ -37,7 +56,7 @@
   position: absolute;
 
   width: 980px;
-  height: 980px;
+  height: 920px;
   left: 803px;
   top: 0px;
 
@@ -83,20 +102,23 @@
 }
 .deco-Line-One {
   position: relative;
-  width: 34px;
-  height: 620px;
-  left: 59px;
-  top: 155px;
+  width: 20px;
+  height: 500px;
+  left: 50px;
+  top: 80px;
   background-color: #f3cf89;
 }
 .deco-Line-Two {
   position: relative;
-  width: 550px;
-  left: 1006px;
-  top: 150px;
-  border: 14px solid #232c35;
+  width: 450px;
+  left: 1200px;
+  top: 50px;
+  background-color: #232c35;
+  border: 8px solid #232c35;
 }
-.footer {
-  z-index: 2;
-  background-color: #ffffff;
+footer {
+  z-index: 3;
+  position: relative;
+
+  background-color: black;
 }
