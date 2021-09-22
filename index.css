@@ -1,35 +1,32 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
 #navigationMenu {
   z-index: 1;
   position: absolute;
-  width: 980px;
-  height: 62px;
-  left: 700px;
-  top: 0px;
-}
-#logo {
-  position: relative;
-  z-index: 1;
+  width: 42%;
+  left: 720px;
 
-  transform: translateY(15px);
-  transform: translateX(18px);
+  padding: 25px;
 }
 .navigationFeatures {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   list-style-type: none;
   outline-style: none;
 
-  margin: 5px;
-
+  margin-left: 20px;
   color: #e28849;
 }
 .list-Item {
   padding: 45px;
   font-family: Roboto;
   font-style: normal;
-  font-weight: normal;
+  font-weight: bolder;
 }
 .list-Item a {
   text-decoration: none;
@@ -37,38 +34,31 @@
   color: #9c755a;
   padding: 45%;
 }
-.circle {
-  opacity: 0.4;
-
-  transform: translateY(12px);
-}
 .section-One {
   position: absolute;
 
-  width: 803px;
-  height: 920px;
-  left: 0px;
-  top: 0px;
+  min-width: 55%;
+  min-height: 135%;
 
   background: #235559;
 }
 .section-Two {
   position: absolute;
 
-  width: 980px;
-  height: 920px;
-  left: 803px;
-  top: 0px;
+  min-width: 48%;
+  min-height: 135%;
+  left: 55%;
 
   background-color: #f3cf89;
 }
+
 .sectionOne-Paragraph,
 .sectionTwo-Paragraph {
   position: relative;
   width: 450px;
   height: 555px;
-  bottom: -50px;
-  left: 430px;
+  bottom: -110px;
+  left: 380px;
 
   font-family: Roboto;
   font-style: normal;
@@ -84,28 +74,39 @@
 }
 .sectionTwo-Paragraph {
   left: 45px;
-  bottom: -220px;
+  bottom: -280px;
   color: #232c35;
 }
 .sectionThree-Paragraph {
   position: relative;
-  width: 450px;
-  height: 25px;
-  bottom: -500px;
-  left: 520px;
+  width: 25%;
+  height: 100%;
+  bottom: -460px;
+  left: 34%;
 
   font-family: sans-serif;
   font-style: normal;
   font-weight: 100;
   font-size: 25px;
   color: #e28849;
+
+  opacity: 0.8;
+}
+.readMore {
+  text-decoration: none;
+
+  color: #232c35;
+  border-radius: 8px;
+  background-color: #e28849;
+
+  padding: 15px;
 }
 .deco-Line-One {
   position: relative;
   width: 20px;
   height: 500px;
   left: 50px;
-  top: 80px;
+  top: -50px;
   background-color: #f3cf89;
 
   opacity: 0.8;
@@ -113,16 +114,10 @@
 .deco-Line-Two {
   position: relative;
   width: 450px;
-  left: 1200px;
-  top: 50px;
+  left: 800px;
+  top: -20px;
   background-color: #232c35;
   border: 8px solid #232c35;
 
   opacity: 0.8;
-}
-footer {
-  z-index: 3;
-  position: relative;
-
-  background-color: black;
 }
