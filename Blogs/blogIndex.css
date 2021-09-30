@@ -1,0 +1,14 @@
+.blogPage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  transform: translate(0%, 15%);
+}
+h1 {
+  padding: 25px;
+  color: #f3cf89;
+}
+hr {
+  width: 50%;
+}

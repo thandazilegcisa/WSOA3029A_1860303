@@ -1,1 +1,4 @@
-
+#svg-container,
+#svg-containerTwo {
+  transform: translateY(50%);
+}

@@ -1,109 +1,51 @@
-/*
-d3.select(".sectionArticle").style("color", "white")
-  .selectAll("strong").style("color", "red");
-
-d3.select(".sectionArticle").append("p").text("This is a new set of text").attr("class","broken");
-*/
-
-//console.log("correct",d3);
-
-/*
-let dataArray = [120,200,250];
-
-d3.select(".section-One")
-  .selectAll("p")  // This returns data to this element
-  .data(dataArray)
-  .style("color", function(d,i){
-    let textColor = this.innerText;
-    if(textColor.indexOf("Dolo") >=0)
-    return "red";
-  })
-  */
-
-  /*
- d3.select("div")
-   .on("mouseover",function(){
-     d3.select(this)
-        .style("background-color","orange");
-     
-        console.log("Mouse Over");
-   })
-   .on("mouseout",function(){
-     d3.select(this)
-       .style("background-color","cornflowerblue ");
-     
-    console.log("Mouse Out");
-   })
-   */
-/*
-  let anim = d3.transition().duration(12000)
-   d3.select("div")
-     .transition(anim)
-     .ease(d3.easeLinear)
-     .style("background-color", "orange");
-*/
-console.log(d3);
-
-/*
-let svg = d3.select(".article-One")
+let svg = d3.select(".section-One")
             .append("svg")
-            .attr("width", 500)
-let bar_One = svg.append("rect")
-                 .attr("x", 10)
-                 .attr("y", 50)
-                 .attr("width" , 250)
-                 .attr("height", 20)
-                 .style("fill", "blue")
-let bar_Two = svg.append("rect")
-                 .attr("x", 10)
-                 .attr("y", 90)
-                 .attr("width" , 0)
-                 .attr("height", 20)
-                 .style("fill", "blue")      
-let bar_Three = svg.append("rect")
-                 .attr("x", 10)
-                 .attr("y", 120)
-                 .attr("width" , 420)
-                 .attr("height", 20)
-                 .style("fill", "blue")
+            .attr("id", "svg-container")
+            .attr("width", 768)
+            .attr("height", 420)
+let group = svg.append("g")
+let bar_One = group.append("rect")
+                .attr("x", 85)
+                .attr("y", 120)
+                .attr("width", 420)
+                .attr("height", 20)
+                .style("fill", "#f3cf89")
+let bar_Two = group.append("rect")
+                .attr("x", 85)
+                .attr("y", 154)
+                .attr("width", 320)
+                .attr("height", 20)
+                .style("fill", "#f3cf89")
+let bar_Three = group.append("rect")
+                .attr("x", 85)
+                .attr("y", 192)
+                .attr("width", 380)
+                .attr("height", 20)
+                .style("fill", "#f3cf89")
 
+let svg_Two = d3.select(".section-Two")
+            .append("svg")
+            .attr("id","svg-containerTwo")
+            .attr("width", 768)
+            .attr("height",420)
+            .style("fill", "black")
+let group_Two = svg_Two.append("g")
+let bar_One_two = group_Two.append("rect")
+                           .attr("x",85)
+                           .attr("y",120)
+                           .attr("width",420)
+                           .attr("height", 20)
+                           .style("fill", "#235559")
+let bar_Two_two = group_Two.append("rect")
+                           .attr("x", 360)
+                           .attr("y",154)
+                           .attr("width",145)
+                           .attr("height", 20)
+                           .style("fill", "#235559")
+let bar_Three_two = group_Two.append("rect")
+                           .attr("x", 45)
+                           .attr("y",192)
+                           .attr("width", 462)
+                           .attr("height", 20)
+                           .style("fill", "#235559")
 
-
-function update(){
-  bar_Two.transition()
-         .ease(d3.easeLinear)
-         .duration(2000)
-         .attr("width", 250)
-}
-update();
-*/
-/*
-let mydataArray = ["me","i","you"]
-
-d3.select(".article-One")
-  .selectAll("p")
-  .data(mydataArray)
-  .enter()
-  .append("p")
-  .text(function(data,index){
-    return data + ""
-  })
-*/
-/*
-let promise = d3.json("https://ghibliapi.herokuapp.com/people")
-promise.then(function(data){
-  console.log(data);
-  const names = data.map(function(person){
-    console.log(`Name: ${person.name} Age: ${person.age}`)
-  })
-
-})
-promise.then.d3.select(".article-One")
-        .selectAll("p")
-        .data(promise)
-        .enter()
-        .append("p")
-        .text(function(data,index){
-         return data + ""
-        })
-*/
