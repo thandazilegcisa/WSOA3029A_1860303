@@ -18,7 +18,7 @@
 }
 .list-Item a {
   display: inline-block;
-  color: #003049;
+  color: #232c35;
   opacity: 80%;
   font-family: "Anton", sans-serif;
   text-decoration: none;
@@ -68,7 +68,7 @@ label {
 }
 .section-One {
   position: absolute;
-  background: #235559;
+  background: #232c35;
 }
 .section-Two {
   position: absolute;
