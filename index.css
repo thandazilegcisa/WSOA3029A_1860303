@@ -24,6 +24,11 @@
   text-decoration: none;
   line-height: 70px;
   padding: 45px;
+
+  transition: all 0.5s ease-in-out;
+}
+.list-Item a:hover {
+  transform: scale(1.5);
 }
 
 /* Hamburger Menu */
@@ -100,20 +105,21 @@ label {
 
   color: #9c755a;
 }
-
+.section-Info p:first-child::first-letter {
+  font-size: 45px;
+}
 .readMore-Button {
-  background-color: #f46c5c;
+  background-color: #ee6c4d;
   color: #232c35;
   border-radius: 8px;
 
   min-width: 8%;
   max-width: 15%;
-  padding: 5px;
-  margin: 2px;
+  padding: 12px;
+  margin: 2.5px;
 
   text-decoration: none;
 }
-
 /* Main Content Responsiveness */
 
 @media screen and (max-width: 1980px) {

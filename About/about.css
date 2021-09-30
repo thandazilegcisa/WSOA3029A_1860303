@@ -1,0 +1,42 @@
+/* About Content */
+
+.aboutHeader {
+  width: 100%;
+  height: 100%;
+
+  transform: translateY(105%);
+
+  color: #f3cf89;
+  padding: 25px;
+}
+.aboutArticle {
+  position: absolute;
+  top: 225px;
+  left: 250px;
+  max-width: 1000px;
+  min-width: 450px;
+  margin: 25px;
+
+  font-size: 32px;
+}
+.aboutArticle p {
+  color: #ee6c4d;
+  font-style: bold;
+}
+.aboutArticle p:first-child::first-letter {
+  font-size: 2.5em;
+  font-weight: 5em;
+}
+/* Responsiveness */
+
+@media screen and (max-width: 767px) {
+  .aboutArticle {
+    top: 275px;
+    left: 0px;
+  }
+}
+
+hr {
+  width: 50%;
+  transform: translateY(80px);
+}

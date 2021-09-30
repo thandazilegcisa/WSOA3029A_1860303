@@ -1,5 +1,4 @@
 .blogPage-Container {
-  position: absolute;
   width: 100%;
   height: 85%;
 
@@ -9,16 +8,39 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   grid-gap: 5px;
+
+  padding: 50px;
+
+  transition: all 0.2s ease-in-out;
+}
+header h2:hover,
+.card a:hover {
+  transform: scale(1.5);
 }
 .card {
   display: grid;
-  grid-template-rows: max-content 100px 1fr;
+  grid-template-rows: max-content 8px 1fr;
 
-  padding: 25px;
+  padding: 15px;
   margin: 12px;
-  border-radius: 5px;
+  border-radius: 12px;
 
   background-color: #235559;
+}
+.card:hover {
+  animation: pulse 1.5s infinite;
+  animation-timing-function: ease-out;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 header h2,
 .content p,
@@ -41,6 +63,10 @@ header h2 {
 }
 .content p {
   color: #eae2b7;
+}
+.content p:first-child::first-letter {
+  font-size: 1.5em;
+  font-weight: 5em;
 }
 .card a {
   text-decoration: none;
