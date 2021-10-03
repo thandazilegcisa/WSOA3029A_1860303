@@ -1,11 +1,14 @@
 const uiNavElements = [
-    {title: "Home", link: "../index.html"},
-    {title: "Blogs", link: "../Blogs/blogIndexPage.html"},
-    {title: "Data", link: "../Data/dataIndex.html"},
-    {title: "About", link: "../About/aboutIndexPage.html"}
+    {title: "Home", link: "/index.html"},
+    {title: "Blogs", link: "/Blogs/blogIndexPage.html"},
+    {title: "Data", link: "/Data/dataIndex.html"},
+    {title: "About", link: "/About/aboutIndexPage.html"}
 ]
 
 function displayUiNavElements(){
+
+    let universal = window.location.pathname === "/WSOA3092A_1860303/" ? "./" : "../";
+
     let nav = document.getElementById("navigation");
     let ul = document.createElement("ul");
     ul.setAttribute("id", "listItem-Container");
@@ -25,4 +28,8 @@ function displayUiNavElements(){
 
     }
 }
-document.addEventListener('DOMContentLoaded', displayUiNavElements());
+document.addEventListener('DOMContentLoaded', function (e){
+    displayUiNavElements();
+});
+
+

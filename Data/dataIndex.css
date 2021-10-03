@@ -1,4 +1,21 @@
 #svg-container,
 #svg-containerTwo {
-  transform: translateY(50%);
+  transform: translateY(35%);
+}
+.bar {
+  fill: #f3cf89;
+}
+.barTwo {
+  fill: #232c35;
+}
+.info-Section {
+  position: absolute;
+
+  top: 120px;
+}
+.info-Section {
+  margin: 5px;
+
+  left: 50px;
+  color: #f3cf89;
 }
