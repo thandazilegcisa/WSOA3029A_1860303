@@ -11,6 +11,7 @@
     <script type="module" src="dataBarOne.js"></script>
     <script type="module" src="dataBarTwo.js"></script>
     <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="../About/about.css" />
     <link rel="stylesheet" href="dataIndex.css" />
     <title>Document</title>
   </head>
@@ -22,12 +23,49 @@
       </nav>
     </header>
     <main>
-      <section class="section-One"></section>
-      <section class="section-Two"></section>
+      <section class="section-One" style="height: 1920px"></section>
+      <section class="section-Two" style="height: 1920px"></section>
       <section class="info-Section">
         <h1>Data Sets:</h1>
       </section>
-      <hr />
+      <section class="about-Container">
+        <h2>Reflection:</h2>
+        <article class="aboutArticle">
+          <p>
+            Plotting and Rendering the graph was very fun, however i came across
+            a very steep problem when i attempted to link my visualisations with
+            data. I found that i was unable to successfully fetch and return
+            data as a result of a "CORS" error. Therefore, i was unable to
+            retrieve data from the api. However, i did try to hard code some
+            example data in myself just to gain an understanding of how plotting
+            and rendering works. So i made an array of random stats that are not
+            exactly from the api.
+          </p>
+          <br />
+          <p>
+            I even tried a second api, but encountered the same problem and
+            error while trying to retrieve data. So i opted to stick with the
+            Superhero Api because while i cannot retrieve the data myself, in my
+            development environment, the site is able to handle requests and
+            upon making a simple id search i am able to retrieve data from the
+            site itself in JSON format. Therefore if this "CORS" error persists
+            and consequently cannot find a solution. I will use the JSON
+            requested and retrieved from the site, make a json file, paste it
+            into the file and use the file to fetch data.
+          </p>
+          <br />
+          <p>
+            Therefore, for now the graphs are made up of an arrays populated by
+            myself just for the purposes of indicating that i am confident in
+            the fact that i know how draw and link the data with javascript.
+            Hence, i do not have much to say about the findings of the data,
+            besides the fact that the way i wanted to layout my data was so that
+            they contrast each other by one being on the left and the other on
+            the right, and as you can see the second graph did not turn out how
+            i would've liked. Will Continue to work on the graphs though!
+          </p>
+        </article>
+      </section>
     </main>
   </body>
 </html>

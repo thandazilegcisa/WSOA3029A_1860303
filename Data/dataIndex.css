@@ -1,6 +1,6 @@
 #svg-container,
 #svg-containerTwo {
-  transform: translateY(35%);
+  transform: translateY(45%);
 }
 .bar {
   fill: #f3cf89;
@@ -15,7 +15,11 @@
 }
 .info-Section {
   margin: 5px;
+  padding: 5px;
 
   left: 50px;
-  color: #f3cf89;
+  color: beige;
+}
+.aboutArticle {
+  top: 780px;
 }
