@@ -1,7 +1,7 @@
 const exampleData =[
-    {id: 'd1', value:10, region: "USA"},
-    {id: 'd2', value: 5, region: "India"},
-    {id: 'd3', value:25, region: "China"},
+    {id: 'd1', value:10, region: "Combat"},
+    {id: 'd2', value: 5, region: "Speed"},
+    {id: 'd3', value:25, region: "Durability"},
  
  ];
 let svg = d3.select(".section-Two")
