@@ -1,8 +1,8 @@
 const uiNavElements = [
-    {title: "Home", link: "/WSOA3029A_1860303/index.html"},
-    {title: "Blogs", link: "/WSOA3029A_1860303/Blogs/blogIndexPage.html"},
-    {title: "Data", link: "/WSOA3029A_1860303/Data/dataIndex.html"},
-    {title: "About", link: "/WSOA3029A_1860303/About/aboutIndexPage.html"}
+    {title: "Home", link: "/index.html"},
+    {title: "Blogs", link: "/Blogs/blogIndexPage.html"},
+    {title: "Data", link: "/Data/dataIndex.html"},
+    {title: "About", link: "/About/aboutIndexPage.html"}
 ]
 
 function displayUiNavElements(){
