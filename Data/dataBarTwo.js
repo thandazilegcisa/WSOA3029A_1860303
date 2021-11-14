@@ -1,9 +1,40 @@
-const exampleData =[
-    {id: 'd1', value:10, region: "Combat"},
-    {id: 'd2', value: 5, region: "Speed"},
-    {id: 'd3', value:25, region: "Durability"},
- 
- ];
+/* Fetching Data*/
+var knysna , capeTown, durban, lagos, accra
+
+/* Section-One Data*/
+let exampleData =[];
+
+fetch("http://api.airvisual.com/v2/countries?&key=530af7e9-7e96-4dfa-a5e6-86f55c2415be")
+.then(function(response){
+    return response.json();
+})
+.then(function(data){
+    knysna= data
+    let newData = exampleData.push(knysna)
+    return fetch("http://api.airvisual.com/v2/city?city=Cape Town&state=Western Cape&country=South Africa&key=530af7e9-7e96-4dfa-a5e6-86f55c2415be")
+})
+.then(function(response){
+    return response.json();
+})
+.then(function(data){
+    capeTown = data;
+    let newData = exampleData.push(capeTown)
+    return fetch("http://api.airvisual.com/v2/city?city=Durban&state=KwaZulu-Natal&country=South Africa&key=530af7e9-7e96-4dfa-a5e6-86f55c2415be")
+})
+.then(function(response){
+    return response.json();
+})
+.then(function(data){
+    durban = data;
+    let newData = exampleData.push(durban);
+    console.log(exampleData);
+})
+.catch(function(error){
+    console.log(error);
+})
+
+/* D3 Stuff */
+
 let svg = d3.select(".section-Two")
 .append("svg")
 .attr("id", "svg-containerTwo")
