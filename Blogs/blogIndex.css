@@ -19,7 +19,7 @@ header h2:hover,
 }
 .card {
   display: grid;
-  grid-template-rows: max-content 8px 1fr;
+  grid-template-rows: max-content 12px 1fr;
 
   padding: 15px;
   margin: 12px;
@@ -44,7 +44,7 @@ header h2:hover,
 }
 
 .card img {
-  width: 12vw;
+  width: 18vw;
 
   text-align: center;
   justify-content: center;
@@ -98,4 +98,10 @@ h1 {
 }
 hr {
   width: 50%;
+}
+.art-Image {
+  width: 35vw;
+
+  transform: translateX(45%);
+  padding: 25px;
 }
