@@ -1,7 +1,3 @@
-#svg-container,
-#svg-containerTwo {
-  transform: translateY(45%);
-}
 .bar {
   fill: #f3cf89;
 }
@@ -22,4 +18,21 @@
 }
 .aboutArticle {
   top: 780px;
+}
+#app {
+  transform: translate(25%, 105%);
+}
+#data-Two {
+  transform: translate(10%, 75%);
+}
+.graph-Two {
+  color: #232c35;
+}
+.data-Info {
+  width: 85%;
+  text-align: left;
+  justify-content: left;
+}
+.reflection-Header {
+  color: red;
 }

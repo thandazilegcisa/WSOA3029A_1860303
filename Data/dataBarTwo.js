@@ -1,25 +1,50 @@
-/* Fetching Data*/
-var knysna , capeTown, durban, lagos, accra
 
-/* Section-One Data*/
+/* Fetching Data*/
+var knysna , capeTown, durban, lagos, accra, newyork
+
+// Section-One Data
 let exampleData =[];
 
-fetch("http://api.airvisual.com/v2/countries?&key=530af7e9-7e96-4dfa-a5e6-86f55c2415be")
+fetch("https://api.waqi.info/feed/Paris/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6")
 .then(function(response){
     return response.json();
 })
 .then(function(data){
-    knysna= data
-    let newData = exampleData.push(knysna)
-    return fetch("http://api.airvisual.com/v2/city?city=Cape Town&state=Western Cape&country=South Africa&key=530af7e9-7e96-4dfa-a5e6-86f55c2415be")
+    knysna= data;
+    let newData = exampleData.push(knysna);
+    return fetch("https://api.waqi.info/feed/London/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6")
+})
+.then(function(response){
+   return response.json() 
+})
+.then(function(data){
+   lagos = data
+   let newData = exampleData.push(lagos)
+   return fetch("https://api.waqi.info/feed/Amsterdam/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6")
+})
+.then(function(response){
+   return response.json();
+})
+.then(function(data){
+   accra = data;
+   let newData = exampleData.push(accra)
+   return fetch("https://api.waqi.info/feed/Beijing/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6")
 })
 .then(function(response){
     return response.json();
 })
 .then(function(data){
     capeTown = data;
-    let newData = exampleData.push(capeTown)
-    return fetch("http://api.airvisual.com/v2/city?city=Durban&state=KwaZulu-Natal&country=South Africa&key=530af7e9-7e96-4dfa-a5e6-86f55c2415be")
+    let newData = exampleData.push(capeTown);
+    return fetch("https://api.waqi.info/feed/Los Angeles/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6")
+})
+.then(function(response){
+    return response.json();
+})
+.then(function(data){
+    newyork = data;
+    let newData = exampleData.push(newyork)
+    return fetch("https://api.waqi.info/feed/New York/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6")
 })
 .then(function(response){
     return response.json();
@@ -28,71 +53,57 @@ fetch("http://api.airvisual.com/v2/countries?&key=530af7e9-7e96-4dfa-a5e6-86f55c
     durban = data;
     let newData = exampleData.push(durban);
     console.log(exampleData);
+
+    exampleData[0].data.city.name = "Paris"
+    exampleData[1].data.city.name = "London"
+    exampleData[2].data.city.name = "Amsterdam"
+    exampleData[3].data.city.name = "Beijing"
+    exampleData[4].data.city.name = "Los Angeles"
+
+ let margins ={top: 20, bottom: 10}
+ let margin = 0;
+ let topMargin =0;
+ const graph_width = 400;
+ const graph_height = 250 - margins.top - margins.bottom;
+
+ const xScale = d3.scaleBand().rangeRound([0,graph_width]).padding(0.1);
+ const yScale = d3.scaleLinear().range([graph_height,0])
+
+ const chartContainer = d3.select('#data-Two')
+                          .attr('width', graph_width)
+                          .attr('height',250)
+                          .classed('container',true)
+                        
+ xScale.domain(exampleData.map((d) => d.data.city.name ));
+ yScale.domain([0, d3.max(exampleData, d => d.data.aqi)  +1]);
+                    
+ const chart = chartContainer.append('g');
+
+ chart.append('g')
+      .attr('transform', `translate(25, ${265})`)
+      .call(d3.axisBottom(xScale))
+      .attr("color", 'white')
+ chart.append("g")
+      .attr("class", "groupOne")
+      .attr("transform",`translate(${25},${45})`)
+      .call(d3.axisLeft(yScale))
+      .attr("color", "white")
+
+ chart.selectAll(".bar")
+      .data(exampleData)
+      .enter()
+      .append('rect')
+      .classed('graph-Two', true)
+      .attr('width', xScale.bandwidth())
+      .attr('height', (data) => 215 - yScale(data.data.aqi))
+      .attr('x', (data) => xScale(data.data.city.name))
+      .attr('y', (data) => yScale(data.data.aqi))
+      .attr("transform", `translate(${25},${45})`)
+      
+
+
 })
 .catch(function(error){
     console.log(error);
-})
+});
 
-/* D3 Stuff */
-
-let svg = d3.select(".section-Two")
-.append("svg")
-.attr("id", "svg-containerTwo")
-.attr("width", 768)
-.attr("height", 500)
-.style("color", "white")
-let xScale = d3.scaleBand().domain(exampleData.map((dataPoint => dataPoint.region))).rangeRound([0,500]).padding(0.1)
-let yScale = d3.scaleLinear().domain([0,100]).range([0,500])
-console.log(`${xScale(5)}px`)
-
-let margin = 55;
-let topMargin =25;
-
-svg.append("g")
-.attr("class", "groupOne")
-.attr("transform",`translate(${margin},${topMargin})`)
-.call(d3.axisTop(yScale))
-
-svg.append("g")
-.attr("class", "groupTwo")
-.attr("transform", `translate(55,${topMargin})`)
-.call(d3.axisLeft(xScale));
-
-const bars = svg.select(".groupTwo")
-                .selectAll(".barTwo")
-                .data(exampleData)
-                .enter()
-                .append('rect')
-                .classed('barTwo',true)
-                .style('width', data => 200- yScale(data.value) )
-                .style('height', 225- xScale.bandwidth() )
-                .attr("x", data =>yScale(data.region))
-                .attr("y", data =>xScale(data.region))
-/* Section- Two Data
-
-let svg_Two = d3.select("svg-containerTwo")
-            .append("svg")
-            .attr("id","barGraph")
-            .attr("width", 768)
-            .attr("height",420)
-            .style("fill", "black")
-let group_Two = svg_Two.append("g")
-let bar_One_two = group_Two.append("rect")
-                           .attr("x",85)
-                           .attr("y",120)
-                           .attr("width",420)
-                           .attr("height", 20)
-                           .style("fill", "#235559")
-let bar_Two_two = group_Two.append("rect")
-                           .attr("x", 360)
-                           .attr("y",154)
-                           .attr("width",145)
-                           .attr("height", 20)
-                           .style("fill", "#235559")
-let bar_Three_two = group_Two.append("rect")
-                           .attr("x", 45)
-                           .attr("y",192)
-                           .attr("width", 462)
-                           .attr("height", 20)
-                           .style("fill", "#235559")
-*/

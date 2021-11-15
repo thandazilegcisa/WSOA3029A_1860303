@@ -1,25 +1,42 @@
+
 /* Fetching Data*/
 var knysna , capeTown, durban, lagos, accra
 
-/* Section-One Data*/
+// Section-One Data
 let exampleData =[];
 
-fetch("http://api.airvisual.com/v2/city?city=Johannesburg&state=Gauteng&country=South Africa&key=530af7e9-7e96-4dfa-a5e6-86f55c2415be")
+fetch("https://api.waqi.info/feed/Johannesburg/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6")
 .then(function(response){
     return response.json();
 })
 .then(function(data){
-    knysna= data
-    let newData = exampleData.push(knysna)
-    return fetch("http://api.airvisual.com/v2/city?city=Cape Town&state=Western Cape&country=South Africa&key=530af7e9-7e96-4dfa-a5e6-86f55c2415be")
+    knysna= data;
+    let newData = exampleData.push(knysna);
+    return fetch("https://api.waqi.info/feed/Pretoria/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6")
+})
+.then(function(response){
+   return response.json() 
+})
+.then(function(data){
+   lagos = data
+   let newData = exampleData.push(lagos)
+   return fetch("https://api.waqi.info/feed/Durban/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6")
+})
+.then(function(response){
+   return response.json();
+})
+.then(function(data){
+   accra = data;
+   let newData = exampleData.push(accra)
+   return fetch("https://api.waqi.info/feed/Accra/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6")
 })
 .then(function(response){
     return response.json();
 })
 .then(function(data){
     capeTown = data;
-    let newData = exampleData.push(capeTown)
-    return fetch("http://api.airvisual.com/v2/city?city=Durban&state=KwaZulu-Natal&country=South Africa&key=530af7e9-7e96-4dfa-a5e6-86f55c2415be")
+    let newData = exampleData.push(capeTown);
+    return fetch("https://api.waqi.info/feed/Lagos/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6")
 })
 .then(function(response){
     return response.json();
@@ -28,48 +45,60 @@ fetch("http://api.airvisual.com/v2/city?city=Johannesburg&state=Gauteng&country=
     durban = data;
     let newData = exampleData.push(durban);
     console.log(exampleData);
+
+    exampleData[0].data.city.name = "Joburg"
+    exampleData[1].data.city.name = "Pretoria"
+    exampleData[2].data.city.name = "Durban"
+    exampleData[3].data.city.name = "Accra"
+    exampleData[4].data.city.name = "Lagos"
+
+ let margins ={top: 20, bottom: 10}
+ let margin = 0;
+ let topMargin =0;
+ const graph_width = 400;
+ const graph_height = 250 - margins.top - margins.bottom;
+
+ const xScale = d3.scaleBand().rangeRound([0,graph_width]).padding(0.1);
+ const yScale = d3.scaleLinear().range([graph_height,0])
+
+ const chartContainer = d3.select('svg')
+                          .attr('width', graph_width)
+                          .attr('height',150)
+                          .classed('container',true)
+                        
+ xScale.domain(exampleData.map((d) => d.data.city.name ));
+ yScale.domain([0, d3.max(exampleData, d => d.data.aqi)  +1]);
+                    
+ const chart = chartContainer.append('g');
+
+ chart.append('g')
+      .attr('transform', `translate(25, ${265})`)
+      .call(d3.axisBottom(xScale))
+      .attr("color", 'white')
+ chart.append("g")
+      .attr("class", "groupOne")
+      .attr("transform",`translate(${25},${45})`)
+      .call(d3.axisLeft(yScale))
+      .attr("color", "white")
+
+ chart.selectAll(".bar")
+      .data(exampleData)
+      .enter()
+      .append('rect')
+      .classed('bar', true)
+      .attr('width', xScale.bandwidth())
+      .attr('height', (data) => 215 - yScale(data.data.aqi))
+      .attr('x', (data) => xScale(data.data.city.name))
+      .attr('y', (data) => yScale(data.data.aqi))
+      .attr("transform", `translate(${25},${45})`)
+
+
 })
 .catch(function(error){
     console.log(error);
-})
+});
 
-/* D3 Stuff*/ 
 
-let svg = d3.select(".section-One")
-            .append("svg")
-            .attr("id", "svg-container")
-            .attr("width", 768)
-            .attr("height", 500)
-            .style("color", "white")
-
-let xScale = d3.scaleBand().domain(exampleData.map((dataPoint => dataPoint.data.city))).rangeRound([0,485]).padding(0.1)
-let yScale = d3.scaleLinear().domain([0,100]).range([0,500])
-
-console.log(`${xScale(5)}px`)
-
-let margin = 55;
-let topMargin =25;
-
-svg.append("g")
-   .attr("class","groupOne")
-   .attr("transform",`translate(${margin},${topMargin})`)
-   .call(d3.axisTop(yScale))
-   
-svg.append("g")
-   .attr("class", "groupTwo")
-   .attr("transform", `translate(${margin},${topMargin})`)
-   .call(d3.axisLeft(xScale));
-
-const bars = svg.select(".groupTwo")
-                .selectAll(".bar")
-                .data(exampleData)
-                .enter()
-                .append('rect')
-                .classed('bar',true)
-                .style('width', data => 200- yScale(data.data.current.current.pollution) )
-                .style('height', 235- xScale.bandwidth() )
-                .attr("x", data =>yScale(data.region))
-                .attr("y", data =>xScale(data.region))
 
 
 

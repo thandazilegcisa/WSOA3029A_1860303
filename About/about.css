@@ -20,6 +20,9 @@
 
   font-size: 28px;
 }
+#aboutID {
+  transform: translateY(-15%);
+}
 .aboutArticle p,
 .aboutArticle-Two p {
   color: #ee6c4d;
