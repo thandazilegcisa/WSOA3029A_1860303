@@ -60,50 +60,55 @@ fetch("https://api.waqi.info/feed/Paris/?token=d98adaa970b5047953d18bbd9ec975202
     exampleData[3].data.city.name = "Beijing"
     exampleData[4].data.city.name = "Los Angeles"
 
- let margins ={top: 20, bottom: 10}
- let margin = 0;
- let topMargin =0;
- const graph_width = 400;
- const graph_height = 250 - margins.top - margins.bottom;
+    let margins ={top: 20, bottom: 10, left: 60, right:30}
+    let margin = 0;
+    let topMargin =0;
+    const graph_width = 400;
+    const graph_height = 250 - margins.top - margins.bottom;
+   
+    const xScale = d3.scaleBand().rangeRound([0,graph_width]).padding(0.1);
+    const yScale = d3.scaleLinear().range([graph_height,0])
+   
+    const chartContainer = d3.select('#scatterPlot')
+                             .attr('width', graph_width)
+                             .attr('height',180)
+                             .classed('container',true)
+                           
+    xScale.domain(exampleData.map((d) => d.data.city.name ));
+    yScale.domain([0, d3.max(exampleData, d => d.data.aqi) + 5]);
+                       
+    const chart = chartContainer.append('g');
+   
+    chart.append('g')
+         .attr('transform', `translate(25, ${225})`)
+         .call(d3.axisBottom(xScale))
+         .style("color", 'white')
+   
+    chart.append("g")
+         .attr("class", "groupOne")
+         .attr("transform",`translate(${25},${5})`)
+         .call(d3.axisLeft(yScale))
+         .style("color", "white")
 
- const xScale = d3.scaleBand().rangeRound([0,graph_width]).padding(0.1);
- const yScale = d3.scaleLinear().range([graph_height,0])
-
- const chartContainer = d3.select('#data-Two')
-                          .attr('width', graph_width)
-                          .attr('height',250)
-                          .classed('container',true)
-                        
- xScale.domain(exampleData.map((d) => d.data.city.name ));
- yScale.domain([0, d3.max(exampleData, d => d.data.aqi)  +1]);
-                    
- const chart = chartContainer.append('g');
-
- chart.append('g')
-      .attr('transform', `translate(25, ${265})`)
-      .call(d3.axisBottom(xScale))
-      .attr("color", 'white')
- chart.append("g")
-      .attr("class", "groupOne")
-      .attr("transform",`translate(${25},${45})`)
-      .call(d3.axisLeft(yScale))
-      .attr("color", "white")
-
- chart.selectAll(".bar")
-      .data(exampleData)
-      .enter()
-      .append('rect')
-      .classed('graph-Two', true)
-      .attr('width', xScale.bandwidth())
-      .attr('height', (data) => 215 - yScale(data.data.aqi))
-      .attr('x', (data) => xScale(data.data.city.name))
-      .attr('y', (data) => yScale(data.data.aqi))
-      .attr("transform", `translate(${25},${45})`)
-      
-
-
+    chart.append("g")
+         .selectAll("dot")
+         .data(exampleData)
+         .enter()
+         .append("circle")
+         .attr("id","dotThing")
+         .attr("cx", function (d) {return xScale(d.data.city.name)})
+         .attr("cy", function (d) {return yScale(d.data.aqi)})
+         .attr("r" , 8)
+         .attr("transform",`translate(${55},${0})`)
+         .style("fill", "#232c35")                   
+                 
 })
 .catch(function(error){
     console.log(error);
 });
 
+
+addEventListener("click", function(event){
+    console.log(event)
+})
+            

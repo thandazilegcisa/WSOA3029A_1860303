@@ -36,3 +36,15 @@
 .reflection-Header {
   color: red;
 }
+#bubblePlot {
+  transform: translateY(-45%);
+}
+#axis {
+  color: white;
+}
+.circle-Dots {
+  transform: translate();
+}
+#scatterPlot {
+  transform: translate(5%, 115%);
+}

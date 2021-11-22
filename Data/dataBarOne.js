@@ -67,19 +67,24 @@ fetch("https://api.waqi.info/feed/Johannesburg/?token=d98adaa970b5047953d18bbd9e
                           .classed('container',true)
                         
  xScale.domain(exampleData.map((d) => d.data.city.name ));
- yScale.domain([0, d3.max(exampleData, d => d.data.aqi)  +1]);
+ yScale.domain([0, d3.max(exampleData, d => d.data.aqi) + 5]);
                     
  const chart = chartContainer.append('g');
 
  chart.append('g')
       .attr('transform', `translate(25, ${265})`)
       .call(d3.axisBottom(xScale))
-      .attr("color", 'white')
+      .style("stroke-width",0.8) 
+      .style("stroke", 'beige')
+      .classed("axis",true)
+
  chart.append("g")
-      .attr("class", "groupOne")
       .attr("transform",`translate(${25},${45})`)
       .call(d3.axisLeft(yScale))
-      .attr("color", "white")
+      .style("stroke-width",0.8)
+      .style("stroke", "beige")
+      .style("fill", "none")
+      .classed("axis",true)
 
  chart.selectAll(".bar")
       .data(exampleData)
@@ -91,7 +96,6 @@ fetch("https://api.waqi.info/feed/Johannesburg/?token=d98adaa970b5047953d18bbd9e
       .attr('x', (data) => xScale(data.data.city.name))
       .attr('y', (data) => yScale(data.data.aqi))
       .attr("transform", `translate(${25},${45})`)
-
 
 })
 .catch(function(error){
