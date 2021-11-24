@@ -19,6 +19,11 @@
   margin: 25px;
 
   font-size: 28px;
+
+  transform: translateX(-8%);
+  background-color: #232c35;
+  padding: 5%;
+  box-shadow: -25px -15px #f3cf89;
 }
 #aboutID {
   transform: translateY(-15%);

@@ -75,7 +75,7 @@ fetch("https://api.waqi.info/feed/Paris/?token=d98adaa970b5047953d18bbd9ec975202
                              .classed('container',true)
                            
     xScale.domain(exampleData.map((d) => d.data.city.name ));
-    yScale.domain([0, d3.max(exampleData, d => d.data.aqi) + 5]);
+    yScale.domain([0, d3.max(exampleData, d => d.data.aqi) + 40]);
                        
     const chart = chartContainer.append('g');
    
@@ -95,12 +95,36 @@ fetch("https://api.waqi.info/feed/Paris/?token=d98adaa970b5047953d18bbd9ec975202
          .data(exampleData)
          .enter()
          .append("circle")
-         .attr("id","dotThing")
+         .attr("class","dotThing")
          .attr("cx", function (d) {return xScale(d.data.city.name)})
          .attr("cy", function (d) {return yScale(d.data.aqi)})
          .attr("r" , 8)
          .attr("transform",`translate(${55},${0})`)
-         .style("fill", "#232c35")                   
+         .style("fill", "#232c35") 
+         .on("mouseover", function(event){
+            d3.select(this)
+              .transition()
+              .duration(800)
+              .attr("r", 45 )
+              .selectAll("text")
+              .append("p")
+              .text("Hello, There")
+              .attr("x", "15")
+              .attr("y", "15" )
+              .style("font-size", "60")
+              .style("text-anchor", "middle")
+              .style("fill", "red")
+           console.log(d3.event);
+        })
+        .on("mouseleave", function(event){
+           d3.select(this)
+             .transition()
+             .duration(800)
+             .attr("r", 8)
+          console.log(d3.event);
+       })       
+         
+
                  
 })
 .catch(function(error){
@@ -108,7 +132,4 @@ fetch("https://api.waqi.info/feed/Paris/?token=d98adaa970b5047953d18bbd9ec975202
 });
 
 
-addEventListener("click", function(event){
-    console.log(event)
-})
             

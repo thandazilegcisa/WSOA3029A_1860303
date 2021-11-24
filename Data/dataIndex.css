@@ -48,3 +48,9 @@
 #scatterPlot {
   transform: translate(5%, 120%);
 }
+#graphs {
+  transform: translateX(-5%);
+  background-color: #232c35;
+  padding: 5%;
+  box-shadow: -40px -15px #f3cf89;
+}
