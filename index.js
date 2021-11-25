@@ -1,8 +1,16 @@
+let linkConnect = "/"
+
+if(!window.location.host.replace(/(localhost|127\.0\.0\.1)(:\d+)?/i, "")){
+    linkConnect ="/";
+}else{
+    linkConnect ="/WSOA309A_1860303/"
+}
+
 const uiNavElements = [
-    {title: "Home", link: "/index.html"},
-    {title: "Blogs", link: "/Blogs/blogIndexPage.html"},
-    {title: "Data", link: "/Data/dataIndex.html"},
-    {title: "About", link: "/About/aboutIndexPage.html"}
+    {title: "Home", link: linkConnect + "index.html"},
+    {title: "Blogs", link: linkConnect + "Blogs/blogIndexPage.html"},
+    {title: "Data", link: linkConnect + "Data/dataIndex.html"},
+    {title: "About", link: linkConnect + "About/aboutIndexPage.html"}
 ]
 
 function displayUiNavElements(){

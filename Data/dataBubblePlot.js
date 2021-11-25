@@ -5,7 +5,7 @@ var knysna , capeTown, durban, lagos, accra, newyork
 // Section-One Data
 let exampleData =[];
 
-fetch("https://api.waqi.info/feed/Paris/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6")
+fetch("https://api.waqi.info/feed/Munich/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6")
 .then(function(response){
     return response.json();
 })
@@ -54,7 +54,7 @@ fetch("https://api.waqi.info/feed/Paris/?token=d98adaa970b5047953d18bbd9ec975202
     let newData = exampleData.push(durban);
     console.log(exampleData);
 
-    exampleData[0].data.city.name = "Paris"
+    exampleData[0].data.city.name = "Munich"
     exampleData[1].data.city.name = "London"
     exampleData[2].data.city.name = "Amsterdam"
     exampleData[3].data.city.name = "Beijing"
@@ -75,18 +75,18 @@ fetch("https://api.waqi.info/feed/Paris/?token=d98adaa970b5047953d18bbd9ec975202
                              .classed('container',true)
                            
     xScale.domain(exampleData.map((d) => d.data.city.name ));
-    yScale.domain([0, d3.max(exampleData, d => d.data.aqi) + 40]);
+    yScale.domain([0, d3.max(exampleData, d => d.data.aqi) + 45 ]);
                        
     const chart = chartContainer.append('g');
    
     chart.append('g')
-         .attr('transform', `translate(25, ${225})`)
+         .attr('transform', `translate(45, ${225})`)
          .call(d3.axisBottom(xScale))
          .style("color", 'white')
    
     chart.append("g")
          .attr("class", "groupOne")
-         .attr("transform",`translate(${25},${5})`)
+         .attr("transform",`translate(${45},${5})`)
          .call(d3.axisLeft(yScale))
          .style("color", "white")
 
@@ -99,21 +99,21 @@ fetch("https://api.waqi.info/feed/Paris/?token=d98adaa970b5047953d18bbd9ec975202
          .attr("cx", function (d) {return xScale(d.data.city.name)})
          .attr("cy", function (d) {return yScale(d.data.aqi)})
          .attr("r" , 8)
-         .attr("transform",`translate(${55},${0})`)
+         .attr("transform",`translate(${75},${0})`)
          .style("fill", "#232c35") 
          .on("mouseover", function(event){
             d3.select(this)
               .transition()
               .duration(800)
               .attr("r", 45 )
-              .selectAll("text")
-              .append("p")
-              .text("Hello, There")
-              .attr("x", "15")
-              .attr("y", "15" )
-              .style("font-size", "60")
-              .style("text-anchor", "middle")
-              .style("fill", "red")
+              .append("text")
+              .attr("x", 150)
+              .attr("y", 50)
+              .attr("stroke", "red")
+              .attr("fill", "red")
+              .classed("circle-Text", true)
+              .text("Hello")
+
            console.log(d3.event);
         })
         .on("mouseleave", function(event){
@@ -121,6 +121,7 @@ fetch("https://api.waqi.info/feed/Paris/?token=d98adaa970b5047953d18bbd9ec975202
              .transition()
              .duration(800)
              .attr("r", 8)
+
           console.log(d3.event);
        })       
          
