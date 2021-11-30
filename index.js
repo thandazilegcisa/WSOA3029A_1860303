@@ -3,7 +3,7 @@ let linkConnect = "/"
 if(!window.location.host.replace(/(localhost|127\.0\.0\.1)(:\d+)?/i, "")){
     linkConnect ="/";
 }else{
-    linkConnect ="/WSOA309A_1860303/"
+    linkConnect ="/WSOA3029A_1860303/"
 }
 
 const uiNavElements = [

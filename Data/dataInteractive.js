@@ -5,6 +5,8 @@ var knysna , capeTown, durban, lagos, accra, newyork
 // Section-One Data
 let exampleData =[];
 
+let data2 = []
+
 fetch("https://api.waqi.info/feed/Munich/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6")
 .then(function(response){
     return response.json();
@@ -63,15 +65,15 @@ fetch("https://api.waqi.info/feed/Munich/?token=d98adaa970b5047953d18bbd9ec97520
     let margins ={top: 20, bottom: 10, left: 60, right:30}
     let margin = 0;
     let topMargin =0;
-    const graph_width = 400;
+    const graph_width = 820;
     const graph_height = 250 - margins.top - margins.bottom;
    
     const xScale = d3.scaleBand().rangeRound([0,graph_width]).padding(0.1);
     const yScale = d3.scaleLinear().range([graph_height,0])
    
-    const chartContainer = d3.select('#scatterPlot')
+    const chartContainer = d3.select('svg')
                              .attr('width', graph_width)
-                             .attr('height',180)
+                             .attr('height',220)
                              .classed('container',true)
                            
     xScale.domain(exampleData.map((d) => d.data.city.name ));
@@ -82,59 +84,64 @@ fetch("https://api.waqi.info/feed/Munich/?token=d98adaa970b5047953d18bbd9ec97520
     chart.append('g')
          .attr('transform', `translate(45, ${225})`)
          .call(d3.axisBottom(xScale))
-         .style("color", 'white')
    
     chart.append("g")
          .attr("class", "groupOne")
          .attr("transform",`translate(${45},${5})`)
          .call(d3.axisLeft(yScale))
-         .style("color", "white")
 
     chart.append("g")
-         .selectAll("dot")
+         .selectAll(".bar")
          .data(exampleData)
          .enter()
-         .append("svg:circle")
-         .attr("class","dotThing")
-         .attr("cx", function (d) {return xScale(d.data.city.name)})
-         .attr("cy", function (d) {return yScale(d.data.aqi)})
-         .attr("r" , 0)
-         .attr("transform",`translate(${75},${0})`)
-         .style("fill", "#232c35") 
-         .attr("r", 8)
+         .append('rect')
+         .classed('bar', true)
+         .attr('width', xScale.bandwidth())
+         .attr('height', (data) => 215 - yScale(data.data.aqi))
+         .attr('x', (data) => xScale(data.data.city.name))
+         .attr('y', (data) => yScale(data.data.aqi))
+         .attr("transform", `translate(${45},${8})`)
          .on("mouseover", function(event){
-            d3.select(this)
-              .transition()
-              .duration(800)
-              .attr("r", 45 )
-            d3
-              .selectAll("text")
-              .data(exampleData)
-              .append("text")
-              .attr("x", function (d) {return xScale(d.data.city.name)})
-              .attr("y", function (d) {return yScale(d.data.aqi)} )
-              .text( data => data.data.aqi)
-              .style("fill", "Red") 
-
+             d3.select(this)
+               .transition()
+               .duration(800)
+               .style("fill","red")
+   
+             d3.select(this)
+          chart.selectAll(".label")
+               .data(exampleData)
+               .enter()
+               .append("text")
+               .text(data => data.data.aqi)
+               .attr("y", data => yScale(data.data.aqi) - 5)
+               .attr("x", data => xScale(data.data.city.name) + (xScale.bandwidth()/2))
+               .attr("transform", `translate(${15},${0})`)
+               .style("fill", "white")
 
            console.log(d3.event);
-         })
+        })
          .on("mouseleave", function(event){
            d3.select(this)
              .transition()
-             .duration(800)
-             .attr("r", 8)
+             .duration(450)
+             .style("fill","#f3cf89")
+
+           d3.select(this)
+        chart.selectAll(".label")
+             .data(exampleData)
+             .exit()
+             .remove()
+             .append("text")
+             .text(data => data.data.aqi)
+             .attr("y", data => yScale(data.data.aqi) - 5)
+             .attr("x", data => xScale(data.data.city.name) + (xScale.bandwidth()/2))
+             .attr("transform", `translate(${15},${0})`)
+             .style("fill", "red")
 
           console.log(d3.event);
          })  
-
-         
-
-                 
+                
 })
 .catch(function(error){
     console.log(error);
 });
-
-
-            

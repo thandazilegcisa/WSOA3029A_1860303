@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet" href="../Blogs/blogIndex.css" />
+    <link rel="stylesheet" href="dataIndex.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale.v3.min.js"></script>
+    <script src="../index.js"></script>
+    <script src="./dataInteractive.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav id="navigation">
+        <label for="toggle">&#9776;</label>
+        <input type="checkbox" id="toggle" />
+      </nav>
+    </header>
+    <main>
+      <section class="section-One" style="height: 980px"></section>
+      <section class="section-Two" style="height: 980px"></section>
+      <br />
+      <section class="info-Section">
+        <h1>Data Sets:</h1>
+        <hr class="dataInteractive-Hr" />
+        <br />
+        <p class="data-Info_Two">
+          The following data sets is an interactive stacked bar graph
+          visualisation of popoulation data of countries examined in the
+          previous visualisation in relation to their air quality index
+        </p>
+        <br />
+      </section>
+      <br />
+      <section class="interactive-Container">
+        <br />
+        <article class="interactive-Article">
+          <br />
+          <svg class="interactive-Svg"></svg>
+
+          <!--
+          <div id="data">
+            <ul></ul>
+          </div>
+          -->
+          <!--
+          <p class="y-AxisInfo">Air Quality Index - Value</p>
+          <p class="x-AxisInfo">Names of African Cities</p>
+          -->
+        </article>
+      </section>
+      <footer id="footer">
+        <nav>
+          <p>Copyright &copy; 2021 My Interactive Media Site</p>
+          <br />
+          <span>
+            <a href="#"
+              ><img
+                class="twitter"
+                src="../Images/Twitter_Icon.png"
+                alt="Twitter Icon"
+            /></a>
+            <a href="#"
+              ><img
+                class="instagram"
+                src="../Images/Instagram_Icon.png"
+                alt="Instagram Icon"
+            /></a>
+            <a href="#"
+              ><img
+                class="facebook"
+                src="../Images/Facebook_Icon.png"
+                alt="Facebook Icon"
+            /></a>
+          </span>
+        </nav>
+      </footer>
+    </main>
+  </body>
+</html>

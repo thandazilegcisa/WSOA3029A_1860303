@@ -1,9 +1,20 @@
+/* Bar Colours */
+
 .bar {
   fill: #f3cf89;
 }
 .barTwo {
   fill: #232c35;
 }
+
+/* Scatter Plot Position */
+
+#scatterPlot {
+  transform: translate(5%, 120%);
+}
+
+/* Data Info Containers */
+
 .info-Section {
   position: absolute;
 
@@ -17,54 +28,53 @@
   color: beige;
 }
 .aboutArticle {
-  top: 780px;
+  top: 280px;
 }
-#app {
-  transform: translate(25%, 105%);
-}
-#data-Two {
-  transform: translate(10%, 75%);
-}
-.graph-Two {
-  color: #232c35;
-}
+
+/* Data Headers */
+
 .data-Info {
   width: 85%;
   text-align: left;
   justify-content: left;
 }
-.reflection-Header {
-  color: red;
+.data-Info_Two {
+  text-align: left;
+  width: 50%;
+  justify-content: left;
 }
-#bubblePlot {
-  transform: translateY(-45%);
-}
-#axis {
-  color: white;
-}
-.circle-Dots {
-  transform: translate();
-}
-#scatterPlot {
-  transform: translate(5%, 120%);
-}
-#graphs {
-  transform: translateX(-5%);
-  background-color: #232c35;
-  padding: 5%;
-  box-shadow: -40px -15px #f3cf89;
-}
+
+/* UnderLine Header */
+
 .dataIndex-Hr {
   transform: translateY(45%);
   width: 75%;
 }
+.dataInteractive-Hr {
+  transform: translateY(25%);
+  width: 50%;
+}
+
+/* Interactions 
 #data {
   transform: translate(8%, 5%);
 
   color: beige;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-between;
 }
 #data ul {
   list-style-type: none;
+
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+
+  transform: translate(22%, -45%);
 }
 #data ul li {
   padding: 5px;
@@ -72,26 +82,54 @@
 }
 #data ul li input {
   margin-left: 20px;
-  transform: translateX(-155%);
 }
-.readMore-Button {
-  position: absolute;
+*/
 
-  top: 95%;
+.interactive-Container {
+  animation-name: axisAnim;
+  animation-duration: 5s;
+}
+
+/* Buttons */
+
+.readMore-Button {
+  position: relative;
+
+  top: 680px;
   left: 5%;
 
   background-color: #f3cf89;
   padding: 8px;
 }
-.readMore-Button a {
+.interaction-Button {
+  position: relative;
+
+  top: 695px;
+  left: 5%;
+
+  background-color: #f3cf89;
+
+  width: 25%;
+
+  padding: 8px;
+  border-radius: 8px;
+}
+svg {
+  background-color: #232c35;
+}
+.interactive-Svg {
+  position: relative;
+
+  width: 80%;
+
+  transform: translate(15%, 105%);
+}
+.readMore-Button a,
+.interaction-Button a {
   color: #232c35;
 
   justify-content: center;
   text-align: center;
-}
-.circle-Text {
-  color: red;
-  z-index: 2;
 }
 
 /* Bar Graph Axis Labels */
@@ -100,15 +138,40 @@
   position: absolute;
   left: 285px;
   bottom: 195px;
-  color: #f3cf89;
+  color: #ee6c4d;
+
+  animation-name: axisAnim;
+  animation-duration: 10s;
 }
 .y-AxisInfo {
-  color: #f3cf89;
+  color: #ee6c4d;
   position: absolute;
-  left: 65px;
+  left: 15px;
   top: 445px;
 
   transform: rotateZ(270deg);
+
+  animation-name: axisAnim;
+  animation-duration: 10s;
+}
+
+/* Bar Graph Axis Animations */
+
+@keyframes axisAnim {
+  0% {
+    opacity: 0%;
+    color: none;
+  }
+  25% {
+    opacity: 25%;
+  }
+  50% {
+    opacity: 50%;
+    color: none;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
 
 /* Scatter Plot Graph Axis Labels */
@@ -119,6 +182,9 @@
   left: 28%;
 
   color: beige;
+
+  animation-name: axisAnim;
+  animation-duration: 10s;
 }
 .y-AxisInfo-Two {
   position: absolute;
@@ -127,4 +193,29 @@
   transform: rotateZ(270deg);
 
   color: beige;
+
+  animation-name: axisAnim;
+  animation-duration: 10s;
+}
+
+/* Footer CSS */
+
+footer {
+  position: absolute;
+  top: 825px;
+  width: 80%;
+  height: 15vh;
+  background-color: #f3cf89;
+
+  text-align: center;
+  padding: 25px;
+}
+footer nav {
+  transform: translateX(15%);
+}
+
+/* Svg */
+
+#app {
+  transform: translate(20%, 125%);
 }
