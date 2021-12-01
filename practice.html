@@ -13,8 +13,16 @@
     <main>
       <button onClick="update(data1)">Variable 1</button>
       <button onClick="update(data2)">Variable 2</button>
+      <a href="#" id="tButton">Variable 1</a>
+      <a href="#" id="tButton-Two">Variable 2</a>
       <div id="dataViz"></div>
       <script type="module" defer>
+        document.getElementById("tButton").onclick = function () {
+          update(data2);
+        };
+        document.getElementById("tButton-Two").onclick = function () {
+          update(data1);
+        };
         // create 2 data_set
         var data1 = [
           { group: "A", value: 4 },
@@ -87,8 +95,10 @@
         }
 
         // Initialize the plot with the first dataset
-        update(data2);
+        update(data1);
       </script>
+
+      <script src="./practice.js"></script>
     </main>
   </body>
 </html>

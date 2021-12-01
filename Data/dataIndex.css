@@ -27,6 +27,9 @@
   left: 50px;
   color: beige;
 }
+.info-Section h1 {
+  transform: translateX(-2%);
+}
 .aboutArticle {
   top: 280px;
 }
@@ -114,7 +117,10 @@
   padding: 8px;
   border-radius: 8px;
 }
-svg {
+#interactiveGraph {
+  position: relative;
+  top: 40%;
+  right: 55%;
   background-color: #232c35;
 }
 .interactive-Svg {
@@ -130,6 +136,26 @@ svg {
 
   justify-content: center;
   text-align: center;
+}
+
+/* Links  */
+
+.link-AQI,
+.link-Humidity {
+  position: absolute;
+  transform: translate(465px, 750px);
+
+  text-decoration: none;
+  color: #f46c5c;
+
+  padding: 5px;
+
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.link-Humidity {
+  transform: translate(645px, 750px);
 }
 
 /* Bar Graph Axis Labels */
@@ -218,4 +244,25 @@ footer nav {
 
 #app {
   transform: translate(20%, 125%);
+}
+
+/* Interactivity */
+
+.list-Name,
+.list-ItemCheckbox {
+  color: #ee6c4d;
+
+  opacity: 100%;
+
+  transform: translate(-2%, 55px);
+  list-style: none;
+
+  padding: 15px;
+}
+.unorderedList {
+  padding: 52px;
+}
+.intReflection-Link {
+  position: relative;
+  transform: translate(450px 100px);
 }

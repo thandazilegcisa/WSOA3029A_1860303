@@ -106,31 +106,14 @@ fetch("https://api.waqi.info/feed/Munich/?token=d98adaa970b5047953d18bbd9ec97520
             d3.select(this)
               .transition()
               .duration(800)
-              .attr("r", 45 )
-            d3
-              .selectAll("text")
-              .data(exampleData)
-              .append("text")
-              .attr("x", function (d) {return xScale(d.data.city.name)})
-              .attr("y", function (d) {return yScale(d.data.aqi)} )
-              .text( data => data.data.aqi)
-              .style("fill", "Red") 
-
-
-           console.log(d3.event);
+              .attr("r", 45 );
          })
          .on("mouseleave", function(event){
            d3.select(this)
              .transition()
              .duration(800)
-             .attr("r", 8)
-
-          console.log(d3.event);
-         })  
-
-         
-
-                 
+             .attr("r", 8);
+         })             
 })
 .catch(function(error){
     console.log(error);
