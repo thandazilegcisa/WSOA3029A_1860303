@@ -10,7 +10,25 @@
 /* Scatter Plot Position */
 
 #scatterPlot {
-  transform: translate(5%, 120%);
+  transform: translate(5%, 130%);
+}
+
+/* Responsiveness */
+
+@media screen and (max-width: 880px) {
+  #scatterPlot {
+    transform: translate(5%, 255%);
+  }
+}
+@media screen and (max-width: 745px) {
+  #scatterPlot {
+    transform: translate(5%, 310%);
+  }
+}
+@media screen and (max-width: 473px) {
+  #scatterPlot {
+    transform: translate(5%, 495%);
+  }
 }
 
 /* Data Info Containers */
@@ -50,6 +68,25 @@
   justify-content: left;
 }
 
+/* Responsiveness */
+
+@media screen and (max-width: 1292px) {
+  .data-Info {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 995px) {
+  .data-Info {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 895px) {
+  .data-Info {
+    width: 45%;
+  }
+}
+
 /* UnderLine Header */
 
 .dataIndex-Hr {
@@ -59,6 +96,19 @@
 .dataInteractive-Hr {
   transform: translateY(25%);
   width: 50%;
+}
+
+/* Responsiveness */
+
+@media screen and (max-width: 1200px) {
+  .dataIndex-Hr {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 1093px) {
+  .dataIndex-Hr {
+    width: 45%;
+  }
 }
 
 /* Interactions 
@@ -142,6 +192,30 @@
   text-align: center;
 }
 
+/* Responsiveness */
+
+@media screen and (max-width: 880px) {
+  .readMore-Button {
+    top: 585px;
+    padding: 4.5px;
+  }
+  .interaction-Button {
+    top: 595px;
+    left: 5.5%;
+  }
+}
+@media screen and (max-width: 473px) {
+  .readMore-Button {
+    top: 585px;
+    padding: 18px;
+  }
+  .interaction-Button {
+    top: 595px;
+    left: 5.5%;
+    padding: 18px;
+  }
+}
+
 /* Links  */
 
 .link-AQI,
@@ -193,7 +267,6 @@
 }
 
 /* Bar Graph Axis Labels */
-
 .x-AxisInfo {
   position: absolute;
   left: 285px;
@@ -213,6 +286,63 @@
 
   animation-name: axisAnim;
   animation-duration: 10s;
+}
+
+/* Labels Responsiveness */
+
+@media screen and (max-width: 1220px) {
+  .x-AxisInfo {
+    left: 285px;
+    top: 585px;
+  }
+  .y-AxisInfo {
+    position: absolute;
+    left: 1450%;
+    top: 1450px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .x-AxisInfo {
+    left: 285px;
+    bottom: 245px;
+  }
+  .y-AxisInfo {
+    left: 1450%;
+    top: 285px;
+  }
+}
+
+@media screen and (max-width: 1750px) {
+  .y-AxisInfo {
+    bottom: 205px;
+    left: 145px;
+  }
+  .x-AxisInfo {
+    bottom: 155px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .x-AxisInfo {
+    left: 170px;
+    top: 595px;
+
+    font-size: 85%;
+  }
+  .y-AxisInfo {
+    font-size: 85%;
+  }
+}
+@media screen and (max-width: 473px) {
+  .x-AxisInfo {
+    transform: translate(-70%, -25%);
+    font-size: 65%;
+  }
+  .y-AxisInfo {
+    left: 125px;
+    font-size: 65%;
+  }
 }
 
 /* Bar Graph Axis Animations */
@@ -238,7 +368,7 @@
 
 .x-AxisInfo-Two {
   position: absolute;
-  top: 600px;
+  top: 685px;
   left: 28%;
 
   color: beige;
@@ -256,6 +386,57 @@
 
   animation-name: axisAnim;
   animation-duration: 10s;
+}
+
+/* Labels Responsiveness */
+
+@media screen and (max-width: 1220px) {
+  .y-AxisInfo-Two {
+    left: -15%;
+    top: 55%;
+  }
+  .x-AxisInfo-Two {
+    top: 71%;
+  }
+}
+
+@media screen and (min-width: 1745px) {
+  .y-AxisInfo-Two {
+    left: -10%;
+    top: 6%;
+  }
+  .x-AxisInfo-Two {
+    top: 80%;
+  }
+}
+@media screen and (max-width: 880px) {
+  .y-AxisInfo-Two {
+    left: -19%;
+    top: 54%;
+
+    font-size: 85%;
+  }
+  .x-AxisInfo-Two {
+    top: 68%;
+
+    font-size: 80%;
+  }
+}
+@media screen and (max-width: 745px) {
+  .y-AxisInfo-Two {
+    left: -22%;
+  }
+}
+@media screen and (max-width: 473px) {
+  .x-AxisInfo-Two {
+    top: 64.5%;
+    left: 20%;
+    font-size: 65%;
+  }
+  .y-AxisInfo-Two {
+    left: -28%;
+    font-size: 65%;
+  }
 }
 
 /* Footer CSS */
@@ -277,7 +458,23 @@ footer nav {
 /* Svg */
 
 #app {
-  transform: translate(20%, 125%);
+  transform: translate(20%, 95%);
+}
+
+@media screen and (max-width: 880px) {
+  #app {
+    transform: translate(20%, 194%);
+  }
+}
+@media screen and (max-width: 745px) {
+  #app {
+    transform: translate(20%, 235%);
+  }
+}
+@media screen and (max-width: 473px) {
+  #app {
+    transform: translate(5%, 305%);
+  }
 }
 
 /* Interactivity */

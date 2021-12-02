@@ -62,8 +62,7 @@ fetch("https://api.waqi.info/feed/Cape Town/?token=d98adaa970b5047953d18bbd9ec97
  const yScale = d3.scaleLinear().range([graph_height,0])
 
  const chartContainer = d3.select('svg')
-                          .attr('width', graph_width)
-                          .attr('height',150)
+                          .attr ("viewBox", `0 0 550 ${255}`)
                           .classed('container',true)
                         
  xScale.domain(exampleData.map((d) => d.data.city.name ));

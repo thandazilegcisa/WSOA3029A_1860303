@@ -50,6 +50,9 @@ label {
   #listItem-Container {
     display: none; /* Render Desktop View of Navigation Invisible */
   }
+  #listItem-Container .list-Item a {
+    color: #f3cf89;
+  }
   label {
     display: block;
     cursor: pointer;
@@ -57,12 +60,17 @@ label {
   }
   #toggle:checked + #listItem-Container {
     display: block; /* Render Responsive View of Navigation Visible */
+    margin: 0px;
+    padding: 0px;
+    background-color: #ee6c4d;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
   }
   #listItem-Container {
     text-align: center;
     width: 100%;
     display: none;
-    left: 5%;
+    left: 0%;
   }
   .image-Container {
     position: relative;

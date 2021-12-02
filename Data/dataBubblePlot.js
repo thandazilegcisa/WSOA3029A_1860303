@@ -72,6 +72,7 @@ fetch("https://api.waqi.info/feed/Munich/?token=d98adaa970b5047953d18bbd9ec97520
     const chartContainer = d3.select('#scatterPlot')
                              .attr('width', graph_width)
                              .attr('height',180)
+                             .attr('viewBox', `0 0 550 255`)
                              .classed('container',true)
                            
     xScale.domain(exampleData.map((d) => d.data.city.name ));
