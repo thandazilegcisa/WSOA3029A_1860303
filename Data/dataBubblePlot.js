@@ -101,7 +101,9 @@ fetch("https://api.waqi.info/feed/Munich/?token=d98adaa970b5047953d18bbd9ec97520
          .attr("r" , 0)
          .attr("transform",`translate(${75},${0})`)
          .style("fill", "#232c35") 
-         .attr("r", 8)
+         .transition()
+         .duration(800)
+         .attr("r", 8.5)
          .on("mouseover", function(event){
             d3.select(this)
               .transition()

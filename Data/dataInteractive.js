@@ -3,15 +3,15 @@ let exampleData = [];
 let data2 = []
 
 async function getData(){
-    let munich_data = fetch("https://api.waqi.info/feed/Munich/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6");
+    let munich_data = fetch("https://api.waqi.info/feed/Cape Town/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6");
     let response = await munich_data;
     let city = await response.json();
 
-    let london_data = fetch("https://api.waqi.info/feed/London/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6");
+    let london_data = fetch("https://api.waqi.info/feed/Durban/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6");
     let response_london = await london_data;
     let city_london = await response_london.json();
 
-    let amsterdam_data = fetch("https://api.waqi.info/feed/Amsterdam/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6");
+    let amsterdam_data = fetch("https://api.waqi.info/feed/Pretoria/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6");
     let response_amsterdam = await amsterdam_data;
     let city_amsterdam = await response_amsterdam.json();
 
@@ -19,11 +19,11 @@ async function getData(){
     let response_beijing = await beijing_data;
     let city_beijing = await response_beijing.json();
 
-    let losangeles_data = fetch("https://api.waqi.info/feed/Los Angeles/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6");
+    let losangeles_data = fetch("https://api.waqi.info/feed/Accra/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6");
     let response_losangeles = await losangeles_data;
     let city_losangeles = await response_losangeles.json();
 
-    let chicago_data = fetch("https://api.waqi.info/feed/Chicago/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6");
+    let chicago_data = fetch("https://api.waqi.info/feed/Lagos/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6");
     let response_chicago = await chicago_data;
     let city_chicago = await response_chicago.json();
 
@@ -50,12 +50,12 @@ async function getData(){
 
     console.log(exampleData)
 
-    exampleData[0].name = "Munich"
-    exampleData[1].name = "London"
-    exampleData[2].name = "Amsterdam"
+    exampleData[0].name = "Cape Town"
+    exampleData[1].name = "Durban"
+    exampleData[2].name = "Pretoria"
     exampleData[3].name = "Beijing"
-    exampleData[4].name = "Chicago"
-    exampleData[5].name = "Los Angeles"
+    exampleData[4].name = "Accra"
+    exampleData[5].name = "Lagos"
 
     /*
     document.getElementById("link-AQI").onclick = function () {
@@ -116,6 +116,12 @@ function render(){
          .attr('x', (data) => xScale(data.name))
          .attr('y', (data) => yScale(data.aqi))
          .attr("transform", `translate(${45},${8})`)
+         .on("mouseover", function(){
+            d3.select(this)
+              .transition()
+              .duration(800)
+              .style("fill", "red");
+         })
     chart.selectAll(".label")
          .data(selected)
          .enter()
@@ -123,7 +129,7 @@ function render(){
          .text(data => data.aqi)
          .attr("y", data => yScale(data.aqi) - 5)
          .attr("x", data => xScale(data.name) + (xScale.bandwidth()/2))
-         .attr("transform", `translate(${15},${35})`)
+         .attr("transform", `translate(${15},${30})`)
          .style("fill", "#f3cf89");
     chart.selectAll(".label")
          .data(selected)

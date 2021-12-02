@@ -30,6 +30,9 @@
 .info-Section h1 {
   transform: translateX(-2%);
 }
+#index-data {
+  transform: translateX(0.25%);
+}
 .aboutArticle {
   top: 280px;
 }
@@ -101,8 +104,10 @@
   top: 680px;
   left: 5%;
 
-  background-color: #f3cf89;
-  padding: 8px;
+  background-color: #ee6c4d;
+  padding: 7.5px;
+
+  border-radius: 8px;
 }
 .interaction-Button {
   position: relative;
@@ -110,11 +115,10 @@
   top: 695px;
   left: 5%;
 
-  background-color: #f3cf89;
+  background-color: #ee6c4d;
+  padding: 7.5px;
 
   width: 25%;
-
-  padding: 8px;
   border-radius: 8px;
 }
 #interactiveGraph {
@@ -132,7 +136,7 @@
 }
 .readMore-Button a,
 .interaction-Button a {
-  color: #232c35;
+  color: beige;
 
   justify-content: center;
   text-align: center;
@@ -156,6 +160,36 @@
 
 .link-Humidity {
   transform: translate(645px, 750px);
+}
+
+#intReflection-Link {
+  position: absolute;
+
+  top: 75%;
+  left: 25%;
+
+  text-decoration: none;
+  color: beige;
+
+  background-color: #ee6c4d;
+  padding: 7.5px;
+
+  border-radius: 8px;
+}
+
+#intGraph-Link {
+  position: absolute;
+
+  top: 75%;
+  left: 7.5%;
+
+  text-decoration: none;
+  color: beige;
+
+  background-color: #ee6c4d;
+  padding: 7.5px;
+
+  border-radius: 8px;
 }
 
 /* Bar Graph Axis Labels */
