@@ -222,6 +222,15 @@
   }
 }
 
+@media screen and (max-width: 1750px) {
+  .readMore-Button {
+    top: 820px;
+  }
+  .interaction-Button {
+    top: 835px;
+  }
+}
+
 /* Links  */
 
 .link-AQI,
@@ -419,13 +428,13 @@
   }
 }
 
-@media screen and (min-width: 1745px) {
+@media screen and (min-width: 1720px) {
   .y-AxisInfo-Two {
     left: -10%;
-    top: 6%;
+    top: 620px;
   }
   .x-AxisInfo-Two {
-    top: 80%;
+    top: 820px;
   }
 }
 @media screen and (max-width: 880px) {
