@@ -15,9 +15,6 @@ async function getData(){
     let response_amsterdam = await amsterdam_data;
     let city_amsterdam = await response_amsterdam.json();
 
-    let beijing_data = fetch("https://api.waqi.info/feed/Beijing/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6");
-    let response_beijing = await beijing_data;
-    let city_beijing = await response_beijing.json();
 
     let losangeles_data = fetch("https://api.waqi.info/feed/Accra/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6");
     let response_losangeles = await losangeles_data;
@@ -38,13 +35,10 @@ async function getData(){
             id: 3, name: city_amsterdam.data.city.name ,aqi: city_amsterdam.data.aqi 
         },
         {
-            id: 4, name: city_beijing.data.city.name ,aqi: city_beijing.data.aqi 
+            id: 4, name: city_chicago.data.city.name ,aqi: city_chicago.data.aqi 
         },
         {
-            id: 5, name: city_chicago.data.city.name ,aqi: city_chicago.data.aqi 
-        },
-        {
-            id: 6, name: city_losangeles.data.city.name ,aqi: city_losangeles.data.aqi 
+            id: 5, name: city_losangeles.data.city.name ,aqi: city_losangeles.data.aqi 
         }
     ]
 
@@ -53,9 +47,8 @@ async function getData(){
     exampleData[0].name = "Cape Town"
     exampleData[1].name = "Durban"
     exampleData[2].name = "Pretoria"
-    exampleData[3].name = "Beijing"
-    exampleData[4].name = "Accra"
-    exampleData[5].name = "Lagos"
+    exampleData[3].name = "Accra"
+    exampleData[4].name = "Lagos"
 
     /*
     document.getElementById("link-AQI").onclick = function () {
@@ -81,14 +74,13 @@ async function getData(){
     const yScale = d3.scaleLinear().range([graph_height,0])
    
     const chartContainer = d3.select('#interactiveGraph')
-                             .attr('width', graph_width)
-                             .attr('height',200)
+                             .attr ("viewBox", `0 0 480 ${255}`)
                              .classed('container',true)
                            
     xScale.domain(exampleData.map((d) => d.name ));
     yScale.domain([0, d3.max(exampleData, d => d.aqi) + 45 ]);
                        
-    const chart = chartContainer.append('g');
+    const chart = chartContainer.append('g').classed("chartGroup", true);
    
     chart.append('g')
          .attr("class", "xAxis-Group")
@@ -121,6 +113,12 @@ function render(){
               .transition()
               .duration(800)
               .style("fill", "red");
+         })
+         .on("mouseleave", function(){
+             d3.select(this)
+               .transition()
+               .duration(800)
+               .style("fill","#f3cf89")
          })
     chart.selectAll(".label")
          .data(selected)

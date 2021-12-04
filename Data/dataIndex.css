@@ -215,6 +215,12 @@
     padding: 18px;
   }
 }
+@media screen and (max-width: 767px) {
+  #interactiveGraph {
+    width: 255px;
+    height: 250px;
+  }
+}
 
 /* Links  */
 
@@ -264,6 +270,19 @@
   padding: 7.5px;
 
   border-radius: 8px;
+}
+
+/* Responsiveness */
+
+@media screen and (max-width: 767px) {
+  #intGraph-Link {
+    top: 65%;
+    left: 20%;
+  }
+  #intReflection-Link {
+    top: 70%;
+    left: 20%;
+  }
 }
 
 /* Bar Graph Axis Labels */
@@ -443,7 +462,7 @@
 
 footer {
   position: absolute;
-  top: 825px;
+  top: 853px;
   width: 80%;
   height: 15vh;
   background-color: #f3cf89;
@@ -453,6 +472,14 @@ footer {
 }
 footer nav {
   transform: translateX(15%);
+}
+
+/* Responsiveness */
+
+@media screen and (max-width: 765px) {
+  footer {
+    top: 895px;
+  }
 }
 
 /* Svg */
@@ -476,6 +503,11 @@ footer nav {
     transform: translate(5%, 305%);
   }
 }
+@media screen and (max-width: 770px) {
+  .chartGroup {
+    transform: translateX(-5%);
+  }
+}
 
 /* Interactivity */
 
@@ -496,4 +528,21 @@ footer nav {
 .intReflection-Link {
   position: relative;
   transform: translate(450px 100px);
+}
+
+/* Responsiveness List */
+
+@media screen and (max-width: 767px) {
+  .list-ItemCheckbox {
+    padding: 5px;
+
+    transform: translate(-2.5%, 285%);
+  }
+}
+@media screen and (max-width: 580px) {
+  .list-Name,
+  .list-ItemCheckbox {
+    transform: translate(-15%, 355%);
+    margin: 5px;
+  }
 }
