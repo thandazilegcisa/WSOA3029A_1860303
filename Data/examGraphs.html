@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../index.css" />
     <link rel="stylesheet" href="../Blogs/blogIndex.css" />
-    <link rel="stylesheet" href="dataIndex.css" />
+    <link rel="stylesheet" href="./dataIndex.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale.v3.min.js"></script>
     <script src="../index.js"></script>
-    <script src="./dataInteractive.js"></script>
+    <script src="./examGraph.js" defer></script>
     <title>Document</title>
   </head>
   <body>
@@ -27,11 +27,13 @@
         <a href="#" id="link-AQI">Variable 1</a>
         <a href="#" id="link-Humidity">Variable 2</a>
         -->
-        <a href="#" id="intReflection-Link">Reflection</a>
-        <a href="./examGraphs.html" id="intGraph-Link">Exam Graphs</a>
+        <a href="#" id="ExamReflection-Link">Reflection</a>
       </section>
-      <section class="section-Two" style="height: 1037px">
-        <svg id="interactiveGraph" width="620" height="265"></svg>
+      <section class="section-Two" style="height: 1005px">
+        <svg id="ExamGraph" width="620" height="265"></svg>
+
+        <a href="##" id="link_dataSetOne">Air Quality Index</a>
+        <a href="##" id="link_dataSetTwo">Population Data</a>
       </section>
       <br />
       <section class="info-Section">
@@ -40,8 +42,9 @@
         <br />
         <p class="data-Info_Two">
           The following data set is an interactive bar graph visualisation of
-          countries examined in the previous visualisation in relation to their
-          air quality index
+          countries examined in the previous visualisation, however for this
+          graph ive chosen to investigate the relationship between a cities air
+          quality index and their population.
         </p>
         <br />
       </section>

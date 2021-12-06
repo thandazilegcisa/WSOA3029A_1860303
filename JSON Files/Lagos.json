@@ -1,0 +1,346 @@
+[
+  {
+    "Year": 2035,
+    "Population": 24418768
+  },
+  {
+    "Year": 2034,
+    "Population": 23632040
+  },
+  {
+    "Year": 2033,
+    "Population": 22855868
+  },
+  {
+    "Year": 2032,
+    "Population": 22090968
+  },
+  {
+    "Year": 2031,
+    "Population": 21339300
+  },
+  {
+    "Year": 2030,
+    "Population": 20600156
+  },
+  {
+    "Year": 2029,
+    "Population": 19875160
+  },
+  {
+    "Year": 2028,
+    "Population": 19165768
+  },
+  {
+    "Year": 2027,
+    "Population": 18474720
+  },
+  {
+    "Year": 2026,
+    "Population": 17803740
+  },
+  {
+    "Year": 2025,
+    "Population": 17156392
+  },
+  {
+    "Year": 2024,
+    "Population": 16536018
+  },
+  {
+    "Year": 2023,
+    "Population": 15945912
+  },
+  {
+    "Year": 2022,
+    "Population": 15387639
+  },
+  {
+    "Year": 2021,
+    "Population": 14862111
+  },
+  {
+    "Year": 2020,
+    "Population": 14368332
+  },
+  {
+    "Year": 2019,
+    "Population": 13903620
+  },
+  {
+    "Year": 2018,
+    "Population": 13463421
+  },
+  {
+    "Year": 2017,
+    "Population": 13042316
+  },
+  {
+    "Year": 2016,
+    "Population": 12634381
+  },
+  {
+    "Year": 2015,
+    "Population": 12239206
+  },
+  {
+    "Year": 2014,
+    "Population": 11856391
+  },
+  {
+    "Year": 2013,
+    "Population": 11485551
+  },
+  {
+    "Year": 2012,
+    "Population": 11126796
+  },
+  {
+    "Year": 2011,
+    "Population": 10778303
+  },
+  {
+    "Year": 2010,
+    "Population": 10441182
+  },
+  {
+    "Year": 2009,
+    "Population": 10114606
+  },
+  {
+    "Year": 2008,
+    "Population": 9798673
+  },
+  {
+    "Year": 2007,
+    "Population": 9491778
+  },
+  {
+    "Year": 2006,
+    "Population": 9194896
+  },
+  {
+    "Year": 2005,
+    "Population": 8859399
+  },
+  {
+    "Year": 2004,
+    "Population": 8518770
+  },
+  {
+    "Year": 2003,
+    "Population": 8190352
+  },
+  {
+    "Year": 2002,
+    "Population": 7875021
+  },
+  {
+    "Year": 2001,
+    "Population": 7571830
+  },
+  {
+    "Year": 2000,
+    "Population": 7280706
+  },
+  {
+    "Year": 1999,
+    "Population": 7000018
+  },
+  {
+    "Year": 1998,
+    "Population": 6730516
+  },
+  {
+    "Year": 1997,
+    "Population": 6471389
+  },
+  {
+    "Year": 1996,
+    "Population": 6222575
+  },
+  {
+    "Year": 1995,
+    "Population": 5982680
+  },
+  {
+    "Year": 1994,
+    "Population": 5752346
+  },
+  {
+    "Year": 1993,
+    "Population": 5530879
+  },
+  {
+    "Year": 1992,
+    "Population": 5318226
+  },
+  {
+    "Year": 1991,
+    "Population": 5067003
+  },
+  {
+    "Year": 1990,
+    "Population": 4764093
+  },
+  {
+    "Year": 1989,
+    "Population": 4479291
+  },
+  {
+    "Year": 1988,
+    "Population": 4211873
+  },
+  {
+    "Year": 1987,
+    "Population": 3959747
+  },
+  {
+    "Year": 1986,
+    "Population": 3723030
+  },
+  {
+    "Year": 1985,
+    "Population": 3500464
+  },
+  {
+    "Year": 1984,
+    "Population": 3291482
+  },
+  {
+    "Year": 1983,
+    "Population": 3094452
+  },
+  {
+    "Year": 1982,
+    "Population": 2909463
+  },
+  {
+    "Year": 1981,
+    "Population": 2735532
+  },
+  {
+    "Year": 1980,
+    "Population": 2572218
+  },
+  {
+    "Year": 1979,
+    "Population": 2418243
+  },
+  {
+    "Year": 1978,
+    "Population": 2273679
+  },
+  {
+    "Year": 1977,
+    "Population": 2137756
+  },
+  {
+    "Year": 1976,
+    "Population": 2010130
+  },
+  {
+    "Year": 1975,
+    "Population": 1889802
+  },
+  {
+    "Year": 1974,
+    "Population": 1776828
+  },
+  {
+    "Year": 1973,
+    "Population": 1670607
+  },
+  {
+    "Year": 1972,
+    "Population": 1570870
+  },
+  {
+    "Year": 1971,
+    "Population": 1476837
+  },
+  {
+    "Year": 1970,
+    "Population": 1413528
+  },
+  {
+    "Year": 1969,
+    "Population": 1352933
+  },
+  {
+    "Year": 1968,
+    "Population": 1295014
+  },
+  {
+    "Year": 1967,
+    "Population": 1239424
+  },
+  {
+    "Year": 1966,
+    "Population": 1186292
+  },
+  {
+    "Year": 1965,
+    "Population": 1135439
+  },
+  {
+    "Year": 1964,
+    "Population": 1086830
+  },
+  {
+    "Year": 1963,
+    "Population": 1020969
+  },
+  {
+    "Year": 1962,
+    "Population": 926233
+  },
+  {
+    "Year": 1961,
+    "Population": 840287
+  },
+  {
+    "Year": 1960,
+    "Population": 762418
+  },
+  {
+    "Year": 1959,
+    "Population": 691580
+  },
+  {
+    "Year": 1958,
+    "Population": 627408
+  },
+  {
+    "Year": 1957,
+    "Population": 569190
+  },
+  {
+    "Year": 1956,
+    "Population": 516443
+  },
+  {
+    "Year": 1955,
+    "Population": 468460
+  },
+  {
+    "Year": 1954,
+    "Population": 424991
+  },
+  {
+    "Year": 1953,
+    "Population": 385556
+  },
+  {
+    "Year": 1952,
+    "Population": 359025
+  },
+  {
+    "Year": 1951,
+    "Population": 341692
+  },
+  {
+    "Year": 1950,
+    "Population": 325218
+  }
+]

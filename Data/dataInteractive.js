@@ -98,7 +98,7 @@ async function getData(){
          
 function render(){
     chart.append("g")
-         .selectAll(".bar")
+         .selectAll(".bar") 
          .data(selected, data => data.id)
          .enter()
          .append('rect')
