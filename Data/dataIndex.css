@@ -10,7 +10,8 @@
 /* Scatter Plot Position */
 
 #scatterPlot {
-  transform: translate(5%, 130%);
+  transform: translate(5%, 152%);
+  width: 100%;
 }
 
 /* Responsiveness */
@@ -53,6 +54,11 @@
 }
 .aboutArticle {
   top: 280px;
+}
+
+.section-One {
+  width: 50%;
+  height: auto;
 }
 
 /* Data Headers */
@@ -176,6 +182,7 @@
   top: 40%;
   right: 55%;
   background-color: #232c35;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 .interactive-Svg {
   position: relative;
@@ -344,10 +351,10 @@
 @media screen and (max-width: 1750px) {
   .y-AxisInfo {
     bottom: 285px;
-    left: 205px;
+    left: 185px;
   }
   .x-AxisInfo {
-    bottom: 285px;
+    bottom: 145px;
   }
 }
 
@@ -472,7 +479,7 @@
 footer {
   position: absolute;
   top: 853px;
-  width: 80%;
+  width: 95%;
   height: 15vh;
   background-color: #f3cf89;
 
@@ -480,7 +487,7 @@ footer {
   padding: 25px;
 }
 footer nav {
-  transform: translateX(15%);
+  transform: translateX(2.5%);
 }
 
 /* Responsiveness */
@@ -494,7 +501,7 @@ footer nav {
 /* Svg */
 
 #app {
-  transform: translate(20%, 95%);
+  transform: translate(12%, -205%);
 }
 
 @media screen and (max-width: 880px) {
@@ -557,7 +564,9 @@ footer nav {
 }
 #ExamGraph {
   background-color: #232c35;
-  transform: translate(-65%, 175%);
+  transform: translate(-60%, 175%);
+
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 #link_dataSetOne {
   position: absolute;
@@ -624,13 +633,14 @@ footer nav {
 }
 @media screen and (max-width: 1755px) {
   #link_dataSetOne {
-    transform: translate(-1445px, 680px);
+    transform: translate(-1245px, 680px);
   }
   #link_dataSetTwo {
-    transform: translate(-1445px, 745px);
+    transform: translate(-1245px, 745px);
   }
   #ExamReflection-Link {
     left: 35%;
     top: 74.3%;
   }
 }
+

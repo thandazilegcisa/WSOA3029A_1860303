@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../index.css" />
     <link rel="stylesheet" href="../About/about.css" />
     <link rel="stylesheet" href="./dataIndex.css" />
+    <link rel="stylesheet" href="./dataIndexResponsive.css" />
+    <link rel="stylesheet" href="./examGraph.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale.v3.min.js"></script>
@@ -19,25 +21,34 @@
   <body>
     <header>
       <nav id="navigation">
+        <img
+          class="logoImage"
+          src="https://media.istockphoto.com/vectors/headline-newspaper-isolated-on-white-background-vector-id610666864?k=20&m=610666864&s=612x612&w=0&h=718lN2PKqT9rm2QI04ZQUrpNK7eycoGIl_aLsBDty-c="
+          alt=""
+        />
         <label for="toggle">&#9776;</label>
         <input type="checkbox" id="toggle" />
       </nav>
     </header>
     <main>
-      <section class="section-One" style="height: 1005px">
+      <section class="section-One" style="max-height: 85%">
+        <img
+          class="Image-One"
+          src="https://media4.giphy.com/media/b5xDLakZRxJ6M/giphy.gif"
+          alt=""
+        />
         <svg id="app"></svg>
         <!--
-        <div id="data">
-          <ul></ul>
-        </div>
-        -->
         <p class="y-AxisInfo">Air Quality Index - Value</p>
         <p class="x-AxisInfo">Names of African Cities</p>
+        -->
       </section>
-      <section class="section-Two" style="height: 1005px">
-        <svg id="scatterPlot" id="data-Two" width="620" height="620"></svg>
+      <section class="section-Two" style="min-height: 1125px">
+        <svg id="scatterPlot" id="data-Two" width="620" height="820"></svg>
+        <!--
         <p class="y-AxisInfo-Two">Air Quality Index - Value</p>
         <p class="x-AxisInfo-Two">Names of Global Cities</p>
+        -->
       </section>
       <br />
       <section class="info-Section">
@@ -58,5 +69,11 @@
         <a href="./dataInteractive.html">Interactive Graph - Page</a>
       </section>
     </main>
+    <footer id="footerDataIndex">
+      <nav>
+        <p>Copyright &copy; 2021 Thandazile Gcisa</p>
+        <br />
+      </nav>
+    </footer>
   </body>
 </html>

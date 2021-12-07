@@ -81,7 +81,7 @@ async function getDataSet(){
             id: 2, name: "Durban", Value: city_Durban[14].Population
         },
         {
-            id: 3, name: "Johannesburg", Value: city_joburg[14].Population
+            id: 3, name: "Joburg", Value: city_joburg[14].Population
         },
         {
             id: 4, name: "Accra", Value: city_Accra[14].Population
@@ -98,6 +98,7 @@ async function getDataSet(){
     let svg = d3.select("#ExamGraph")
                 .attr ("viewBox", `0 0 ${graphWidth + margins.left + margins.right} ${graphHeight + margins.top + margins.bottom}`)
                 .append("g")
+                .classed("examSvg",true)
                 .attr("transform", `translate(${85},${45})`)
 
     let x = d3.scaleBand()

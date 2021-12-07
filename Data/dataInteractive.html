@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../index.css" />
     <link rel="stylesheet" href="../Blogs/blogIndex.css" />
     <link rel="stylesheet" href="dataIndex.css" />
+    <link rel="stylesheet" href="./dataIndexResponsive.css" />
+    <link rel="stylesheet" href="./dataInteraciveResponsiveness.css" />
+    <link rel="stylesheet" href="./examGraph.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale.v3.min.js"></script>
@@ -17,20 +20,26 @@
   <body>
     <header>
       <nav id="navigation">
+        <img
+          class="logoImage"
+          src="https://media.istockphoto.com/vectors/headline-newspaper-isolated-on-white-background-vector-id610666864?k=20&m=610666864&s=612x612&w=0&h=718lN2PKqT9rm2QI04ZQUrpNK7eycoGIl_aLsBDty-c="
+          alt=""
+        />
         <label for="toggle">&#9776;</label>
         <input type="checkbox" id="toggle" />
       </nav>
     </header>
     <main>
-      <section class="section-One" style="height: 1005px">
-        <!--
-        <a href="#" id="link-AQI">Variable 1</a>
-        <a href="#" id="link-Humidity">Variable 2</a>
-        -->
+      <section class="section-One" style="min-height: 1125px">
+        <img
+          class="Image-One"
+          src="https://media4.giphy.com/media/b5xDLakZRxJ6M/giphy.gif"
+          alt=""
+        />
         <a href="#" id="intReflection-Link">Reflection</a>
         <a href="./examGraphs.html" id="intGraph-Link">Exam Graphs</a>
       </section>
-      <section class="section-Two" style="height: 1037px">
+      <section class="section-Two" style="min-height: 1125px">
         <svg id="interactiveGraph" width="620" height="265"></svg>
       </section>
       <br />

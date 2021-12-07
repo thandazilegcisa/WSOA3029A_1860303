@@ -1,0 +1,12 @@
+@media screen and (max-width: 1785px) {
+  footer {
+    top: 942px;
+  }
+  #ExamReflection-Link {
+    left: 75%;
+    top: 65.5%;
+  }
+  #interactiveGraph {
+    transform: translate(10px, 380px);
+  }
+}

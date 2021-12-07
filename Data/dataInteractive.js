@@ -3,7 +3,7 @@ let exampleData = [];
 let data2 = []
 
 async function getData(){
-    let munich_data = fetch("https://api.waqi.info/feed/Cape Town/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6");
+    let munich_data = fetch("https://api.waqi.info/feed/Johannesburg/?token=d98adaa970b5047953d18bbd9ec9752024b93ae6");
     let response = await munich_data;
     let city = await response.json();
 
@@ -44,7 +44,7 @@ async function getData(){
 
     console.log(exampleData)
 
-    exampleData[0].name = "Cape Town"
+    exampleData[0].name = "Johannesburg"
     exampleData[1].name = "Durban"
     exampleData[2].name = "Pretoria"
     exampleData[3].name = "Accra"
@@ -77,8 +77,12 @@ async function getData(){
                              .attr ("viewBox", `0 0 480 ${255}`)
                              .classed('container',true)
                            
-    xScale.domain(exampleData.map((d) => d.name ));
-    yScale.domain([0, d3.max(exampleData, d => d.aqi) + 45 ]);
+    xScale.domain(exampleData.map(function(data){
+        return data.name
+    } ));
+    yScale.domain([0, d3.max(exampleData, function(data){
+        return data.aqi
+    }) + 45 ]);
                        
     const chart = chartContainer.append('g').classed("chartGroup", true);
    
@@ -104,9 +108,15 @@ function render(){
          .append('rect')
          .classed('bar', true)
          .attr('width', xScale.bandwidth())
-         .attr('height', (data) => 215 - yScale(data.aqi))
-         .attr('x', (data) => xScale(data.name))
-         .attr('y', (data) => yScale(data.aqi))
+         .attr('height', function (data){
+             return 215 - yScale(data.aqi)
+         })
+         .attr('x', function (data){
+             return xScale(data.name)
+         })
+         .attr('y', function(data){
+             return yScale(data.aqi)
+         })
          .attr("transform", `translate(${45},${8})`)
          .on("mouseover", function(){
             d3.select(this)
@@ -125,8 +135,12 @@ function render(){
          .enter()
          .append("text")
          .text(data => data.aqi)
-         .attr("y", data => yScale(data.aqi) - 5)
-         .attr("x", data => xScale(data.name) + (xScale.bandwidth()/2))
+         .attr("y",function(data){
+             return yScale(data.aqi) -5 
+         })
+         .attr("x", function(data){
+             return xScale(data.name) + (xScale.bandwidth()/2)
+         })
          .attr("transform", `translate(${15},${30})`)
          .style("fill", "#f3cf89");
     chart.selectAll(".label")
@@ -146,13 +160,17 @@ render();
                           .select("ul")
                           .attr("class","unorderedList")
                           .selectAll("li")
-                          .data(selected , data => data.id)
+                          .data(selected , function(data){
+                              return data.id
+                          })
                           .enter()
                           .append("li")
                           .attr("class","list-ItemCheckbox")
                countryList.append("span")
                           .attr("class", "list-Name")
-                          .text(data => data.name);
+                          .text(function(data){
+                              return data.name
+                          });
                countryList.append("input")
                           .attr("type","checkbox")
                           .attr("checked", false)
@@ -161,10 +179,15 @@ render();
                                   unselected.push(events.id)
                               }
                               else{
-                                  unselected = unselected.filter((id) => id !== events.id)
+                                  unselected = unselected.filter(                                 
+                                    function(id){
+                                    return id !== events.id
+                                })
                               }
                               selected = exampleData.filter(
-                                  (d) => unselected.indexOf(d.id) === -1
+                                  function(d){
+                                      return unselected.indexOf(d.id) === -1
+                                  }
                               );
                               render();
                               console.log(unselected);

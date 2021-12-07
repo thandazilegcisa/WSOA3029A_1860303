@@ -1,0 +1,86 @@
+@media screen and (max-width: 360px) and (max-height: 640px) {
+  .info-Section h1 {
+    transform: translateX(-25%);
+  }
+  .dataInteractive-Hr {
+    transform: translate(-30%, 25%);
+    width: 50%;
+  }
+  footer {
+    top: 1023.5px;
+  }
+  .data-Info_Two {
+    width: 80%;
+    transform: translate(-45px, 10px);
+  }
+  #link_dataSetOne {
+    transform: translate(-605px, 800px);
+  }
+  #link_dataSetTwo {
+    transform: translate(-605px, 900px);
+  }
+
+  #ExamReflection-Link {
+    left: 2.5%;
+    top: 82%;
+  }
+  footer nav {
+    transform: translateX(5%);
+  }
+  #scatterPlot {
+    transform: translate(10%, 580%);
+    width: 100%;
+  }
+  .readMore-Button {
+    top: 520px;
+    max-width: 20%;
+  }
+  .interaction-Button {
+    top: 535px;
+    max-width: 20%;
+  }
+  #index-data {
+    transform: translateX(-15.25%);
+  }
+  .dataIndex-Hr {
+    transform: translate(-35%, 45%);
+  }
+  .data-Info {
+    transform: translate(-45px, 10px);
+  }
+  .container {
+    width: 75%;
+  }
+  #app {
+    transform: translate(5%, 325%);
+  }
+}
+@media screen and (max-width: 1450px) {
+  .interaction-Button {
+    top: 680px;
+  }
+  .readMore-Button {
+    top: 785px;
+  }
+}
+
+@media screen and (max-width: 1750px) {
+  #app {
+    transform: translate(12%, -175%);
+  }
+  #scatterPlot {
+    transform: translate(5%, 110%);
+  }
+  #footerDataIndex {
+    width: 100%;
+    top: 1100px;
+  }
+  .logoImage {
+    top: 2%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  #app {
+    transform: translate(12%, -855px);
+  }
+}

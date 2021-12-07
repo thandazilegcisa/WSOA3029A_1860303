@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../index.css" />
     <link rel="stylesheet" href="../Blogs/blogIndex.css" />
     <link rel="stylesheet" href="./dataIndex.css" />
+    <link rel="stylesheet" href="./dataIndexResponsive.css" />
+    <link rel="stylesheet" href="./dataInteraciveResponsiveness.css" />
+    <link rel="stylesheet" href="./examGraph.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale.v3.min.js"></script>
@@ -17,23 +20,28 @@
   <body>
     <header>
       <nav id="navigation">
+        <img
+          class="logoImage"
+          src="https://media.istockphoto.com/vectors/headline-newspaper-isolated-on-white-background-vector-id610666864?k=20&m=610666864&s=612x612&w=0&h=718lN2PKqT9rm2QI04ZQUrpNK7eycoGIl_aLsBDty-c="
+          alt=""
+        />
         <label for="toggle">&#9776;</label>
         <input type="checkbox" id="toggle" />
       </nav>
     </header>
     <main>
-      <section class="section-One" style="height: 1005px">
-        <!--
-        <a href="#" id="link-AQI">Variable 1</a>
-        <a href="#" id="link-Humidity">Variable 2</a>
-        -->
-        <a href="#" id="ExamReflection-Link">Reflection</a>
+      <section class="section-One" style="max-height: 1125px">
+        <img
+          class="Image-One"
+          src="https://media4.giphy.com/media/b5xDLakZRxJ6M/giphy.gif"
+          alt=""
+        />
       </section>
-      <section class="section-Two" style="height: 1005px">
-        <svg id="ExamGraph" width="620" height="265"></svg>
-
+      <section class="section-Two" style="min-height: 1125px">
+        <svg id="ExamGraph" width="420" height="265"></svg>
         <a href="##" id="link_dataSetOne">Air Quality Index</a>
         <a href="##" id="link_dataSetTwo">Population Data</a>
+        <a href="./examReflection.html" id="ExamReflection-Link">Reflection</a>
       </section>
       <br />
       <section class="info-Section">
@@ -43,27 +51,12 @@
         <p class="data-Info_Two">
           The following data set is an interactive bar graph visualisation of
           countries examined in the previous visualisation, however for this
-          graph ive chosen to investigate the relationship between a cities air
-          quality index and their population.
+          graph i have chosen to investigate the relationship between a cities
+          air quality index and their population.
         </p>
         <br />
       </section>
       <br />
-      <section class="interactive-Container">
-        <br />
-        <article class="interactive-Article">
-          <br />
-          <svg class="interactive-Svg"></svg>
-          <br />
-          <div id="data">
-            <ul></ul>
-          </div>
-          <!--
-          <p class="y-AxisInfo">Air Quality Index - Value</p>
-          <p class="x-AxisInfo">Names of African Cities</p>
-          -->
-        </article>
-      </section>
       <footer id="footer">
         <nav>
           <p>Copyright &copy; 2021 Thandazile Gcisa</p>
